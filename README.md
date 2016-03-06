@@ -14,7 +14,7 @@ Requirements for pretty much everything
 
 The requirements i3 wm I use are
 
-    i3 i3blocks playerctl sysstat
+    i3 i3blocks feh playerctl sysstat
 
 The requirements for vim is the following (Mostly because we need to compile
 YCM)

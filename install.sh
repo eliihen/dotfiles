@@ -7,13 +7,13 @@ pushd `dirname $0` > /dev/null
 DIR=`pwd`
 popd > /dev/null
 
-# for script in $(find "$DIR" -mindepth 2 -name 'install.sh'); do
-#   echo running "$script"
-#   $script
-# done
+for script in $(find "$DIR" -mindepth 2 -name 'install.sh'); do
+  echo running "$script"
+  $script
+done
 
-ln -vs $DIR/.Xresources $HOME/.Xresources 
-ln -vs $DIR/.xinitrc $HOME/.xinitrc 
+ln -vs $DIR/.Xresources $HOME/.Xresources
+ln -vs $DIR/.xinitrc $HOME/.xinitrc
 
 xrdb $HOME/.Xresources
 
