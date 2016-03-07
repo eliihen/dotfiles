@@ -93,13 +93,13 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Prevent typos by only having to set here
-set $workspace1 "1 - Terminals"
+set $workspace1 "1 - Editor"
 set $workspace2 "2 - Firefox"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
+set $workspace3 "3 - Terminals"
+set $workspace4 "4 - IntelliJ"
+set $workspace5 "5 - Secrets"
+set $workspace6 "6 - Chat"
+set $workspace7 "7 - Communication"
 set $workspace8 "8"
 set $workspace9 "9"
 set $workspace10 "10 - Music"
@@ -129,7 +129,14 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Assign programs to workspaces when started
-assign [class="Spotify"] $workspace10
+assign [class="Firefox"] $workspace2
+assign [class="idea"] $workspace4
+assign [class="KeePass2"] $workspace5
+assign [class="telegram"] $workspace6
+assign [class="(HipChat|Thunderbird|kontact)"] $workspace7
+assign [class="(VLC|Spotify)"] $workspace10
+# Spotify 1.0.x is buggy
+for_window [class="Spotify"] move to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -194,7 +201,7 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # exec_always section - run every time config is loaded
 # Set background wallpaper
-exec_always feh --bg-scale /home/espen/Pictures/wallpaper.*
+exec_always --no-startup-id feh --bg-scale /home/espen/Pictures/wallpaper.*
 
 # exec section - run only when i3 is started
 # Start programs on boot
