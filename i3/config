@@ -200,3 +200,6 @@ exec_always feh --bg-scale /home/espen/Pictures/wallpaper.*
 # Start programs on boot
 exec spotify
 
+# Run urxvt as a daemon to make startup instant
+exec urxvtd --quiet --opendisplay --fork
+
