@@ -24,11 +24,11 @@ source $ZSH/oh-my-zsh.sh
 # export GOROOT=$HOME/golang/go
 export GOPATH=$HOME/golang/bin
 
-export PATH="/local/java/jdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/espen/.local/bin:/home/espen/bin:/usr/local/bin:$PATH:/opt/local/bin:~/workspace/oms/deploy:~/workspace/oms/util:"
+export PATH="/local/java/jdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/espen/.local/bin:/home/espen/bin:/usr/local/bin:$PATH:/opt/local/bin:/home/espen/workspace/oms/deploy:/home/espen/workspace/oms/util:"
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
-export TERM=xterm-256color
+export TERM=rxvt-unicode-256color
 
 export SVNROOT=svn+ssh://svn.osl.manamind.com/export/svn
 export JAVA_HOME=/local/java/jdk1.8.0_51
@@ -62,9 +62,33 @@ alias rested="cd ~/workspace/diverse/RESTED"
 
 alias gu="git up"
 
-export NVM_DIR="/home/espen/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Usage: lg hb hb-collect warn
+lg() {
+  local level=${3:-debug}
 
+  if [ -z "$1" ]; then
+    echo Project is required
+  elif [ "$2" == "catalina" ]; then
+    $PAGER /local/home/c_$1/catalina/logs/catalina.out
+  elif [ -z "$2" ]; then
+    $PAGER /local/home/c_$1/catalina/logs/$1.$level.log
+  else
+    $PAGER /local/home/c_$1/catalina/logs/$2.$level.log
+  fi
+}
+
+# Usage: rc hb start
+rc() {
+  if [ -z "$1" ]; then
+    echo Project is required
+  elif [ -z "$2" ]; then
+    echo action is required
+  else
+    /local/home/c_$1/catalina/rc $2
+  fi
+}
+
+# Usage: logs hb
 logs() {
   if [ -z "$1" ]; then
     cd /local/home
@@ -105,3 +129,4 @@ export NVM_DIR="/home/espen/.nvm"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

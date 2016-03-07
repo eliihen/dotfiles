@@ -12,7 +12,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 mkdir -p ~/.vim/colors/
-wget https://raw.githubusercontent.com/queyenth/oxeded.vim/master/colors/oxeded.vim
+wget https://raw.githubusercontent.com/queyenth/oxeded.vim/master/colors/oxeded.vim -O ~/.vim/colors/oxeded.vim
 
 cd ~/.vim/bundle/YouCompleteMe
 python2 install.py --clang-completer --tern-completer

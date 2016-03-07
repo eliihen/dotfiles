@@ -8,8 +8,12 @@ DIR=`pwd`
 popd > /dev/null
 
 for script in $(find "$DIR" -mindepth 2 -name 'install.sh'); do
-  echo running "$script"
-  $script
+  echo -n "Would you like to install $(dirname $script) (y/n)? "
+  read answer
+  if echo "$answer" | grep -iq "^y" ;then
+    echo running "$script"
+    $script
+  fi
 done
 
 ln -vs $DIR/.Xresources $HOME/.Xresources
