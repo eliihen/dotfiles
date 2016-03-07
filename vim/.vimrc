@@ -1,5 +1,6 @@
-" -- Start vundle --
-"
+""""""""""""""""""""""""
+"  Vundle and Plugins  "
+""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -36,33 +37,18 @@ Plugin 'Valloric/YouCompleteMe'
 " to add snippets for a given language.
 Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use YouCompleteMe
-let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsJumpForwardTrigger="<s-j>"
-let g:UltiSnipsJumpBackwardTrigger="<s-k>"
-
-" Where does the window to edit snippets open?
-let g:UltiSnipsEditSplit="vertical"
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-" -- End vundle --
+
+" FZF
+" Enable fzf search
+set rtp+=~/.fzf
 
 
-" -- Config --
+""""""""""""""""""""""
+"       Config       "
+""""""""""""""""""""""
 
 " Enable syntax highlighting
 syntax enable
@@ -108,12 +94,6 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 set list
 set listchars=tab:>-,trail:.,extends:>,precedes:<
 
-" Quote: get rid of that stupid goddamned help key that you will invaribly hit
-" constantly while aiming for escape
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
-
 set ai "Auto indent
 set si "Smart indent
 set nowrap "Wrap lines
@@ -148,14 +128,13 @@ set autoread
 " Make help open in new tab
 cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : 'h'
 
-" Reassign leader to space
-let mapleader = "\<Space>"
+" Do not search here
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/node_modules/*
 
-" Leader shortcuts
-" Quickly save current file
-nnoremap <Leader>w :w<CR>
-
-" Syntastic
+"""""""""""""""
+"  Syntastic  "
+"""""""""""""""
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_checkers = []
 set statusline+=%#warningmsg#
@@ -168,9 +147,21 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Do not search here
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=*/node_modules/*
+
+"""""""""""""""
+"  UltiSnips  "
+"""""""""""""""
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<s-j>"
+let g:UltiSnipsJumpBackwardTrigger="<s-k>"
+
+" Where does the window to edit snippets open?
+let g:UltiSnipsEditSplit="vertical"
+
+
+""""""""""""""""""
+"  Key bindings  "
+""""""""""""""""""
 
 " The best hotkey ever
 map <c-up> 10k
@@ -187,16 +178,33 @@ map <c-l> 10l
 " NERDTree
 map <c-n> :NERDTreeToggle<CR>
 
-" FZF
-" Enable fzf search
-set rtp+=~/.fzf
-
 " FZF search git files on C-p
 " This ignores stuff like node_modules
 map <c-p> :GitFiles<CR>
 
-"
-" -- Functions --
+" Quote: get rid of that stupid goddamned help key that you will invaribly hit
+" constantly while aiming for escape
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+
+""""""""""""
+"  Leader  "
+""""""""""""
+
+" Reassign leader to space
+let mapleader = "\<Space>"
+
+" Leader shortcuts
+" Quickly save current file
+nnoremap <Leader>w :w<CR>
+
+
+"""""""""""""""
+"  Functions  "
+"""""""""""""""
+
 " Delete trailing white space
 func! DeleteTrailingWS()
   exe "normal mz"
@@ -216,7 +224,11 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
-" -- NeoVIM specific config --
+
+""""""""""""
+"  NeoVIM  "
+""""""""""""
+
 if has('nvim')
   " Get out of terminal mode with Esc
   tnoremap <Esc> <C-\><C-n>
