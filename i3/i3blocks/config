@@ -108,7 +108,7 @@ interval=10
 [cpu_usage]
 label=CPU
 interval=10
-min_width=CPU: 100.00%
+min_width=CPU 100.0%
 #separator=false
 
 [load_average]
@@ -153,5 +153,5 @@ interval=10
 #
 [time]
 command=date '+%H:%M:%S %d.%m.%Y'
-interval=5
+interval=1
 
