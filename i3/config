@@ -189,6 +189,9 @@ bar {
 # lock screen
 bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
+# Notify i3blocks when Caps lock is active
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+
 # exec_always section - run every time config is loaded
 # Set background wallpaper
 exec_always feh --bg-scale /home/espen/Pictures/wallpaper.*
