@@ -194,7 +194,7 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec i3lock --color "$bg-color"
+bindsym $mod+shift+x exec ~/workspace/espen/dotfiles/i3/scripts/lock.sh
 
 # Notify i3blocks when Caps lock is active
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
@@ -206,6 +206,9 @@ exec_always --no-startup-id feh --bg-scale /home/espen/Pictures/wallpaper.*
 # exec section - run only when i3 is started
 # Start programs on boot
 exec spotify
+
+# Compositor
+exec compton
 
 # Run urxvt as a daemon to make startup instant
 exec urxvtd --quiet --opendisplay --fork
