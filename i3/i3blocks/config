@@ -28,6 +28,23 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+[keyindicator]
+instance=CAPS
+interval=once
+signal=11
+separator=false
+
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -138,18 +155,3 @@ interval=10
 command=date '+%H:%M:%S %d.%m.%Y'
 interval=5
 
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-[keyindicator]
-instance=CAPS
-interval=once
-signal=11
-
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11
