@@ -1,24 +1,19 @@
+################
+#  ZSH config  #
+################
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="miloshadzic"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+###########################
+#  Environment variables  #
+###########################
 
 # Google Go
 # export GOROOT=$HOME/golang/go
@@ -42,13 +37,16 @@ export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
 
-# Aliases
+# extend limit of concurrent watched files to avoid grunt error
+ulimit -n 2048
+
+#############
+#  Aliases  #
+#############
+
 alias java1.8='export JAVA_HOME=/local/java/jdk1.8.0_51'
 alias java1.7='export JAVA_HOME=/local/java/jdk1.7.0_79'
 alias java1.6='export JAVA_HOME=/local/java/jdk1.6.0_31'
-
-# extend limit of concurrent watched files to avoid grunt error
-ulimit -n 2048
 
 alias work="cd ~/workspace/oms"
 alias deploys="cd ~/workspace/oms/deploy/full-deploy"
@@ -60,7 +58,14 @@ alias hb="cd /home/espen/workspace/oms/hb/client"
 alias jaws="cd /home/espen/workspace/oms/jaws"
 alias rested="cd ~/workspace/diverse/RESTED"
 
+# Not all servers support rxvt-univode-256color
+alias ssh="TERM=xterm ssh"
+
 alias gu="git up"
+
+###############
+#  Functions  #
+###############
 
 # Usage: lg hb hb-collect warn
 lg() {
@@ -97,6 +102,10 @@ logs() {
   fi
 }
 
+############################
+#  GPG agent as SSH agent  #
+############################
+
 unset GPG_AGENT_INFO
 
 pgrep "gpg-agent" > /dev/null
@@ -119,14 +128,27 @@ export GPG_TTY=$(tty)
 
 export GPGKEY=0E25CFCC
 
+##########
+#  TMUX  #
+##########
+
+# Use i3 instead of tmux
 # if [[ ! "$TMUX" ]] && [[ $(tty | fgrep pts) ]] && [[ ! $SSH_CONNECTION ]]
 # then
 #   tmux
 # fi
 
+#########
+#  NVM  #
+#########
+
 export NVM_DIR="/home/espen/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
+#########
+#  FZF  #
+#########
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
