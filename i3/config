@@ -194,14 +194,14 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec ~/workspace/espen/dotfiles/i3/scripts/lock.sh
+bindsym $mod+shift+x exec $HOME/workspace/espen/dotfiles/i3/scripts/lock.sh $HOME/Pictures/lock.*
 
 # Notify i3blocks when Caps lock is active
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # exec_always section - run every time config is loaded
 # Set background wallpaper
-exec_always --no-startup-id feh --bg-scale /home/espen/Pictures/wallpaper.*
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.*
 
 # exec section - run only when i3 is started
 # Start programs on boot
