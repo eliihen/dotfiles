@@ -6,9 +6,13 @@ URxvt.letterSpace:         -1
 URxvt.scrollBar: false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox-developer
+
+! Disable PrtSc-button print so we dont accidentally print all our source code
+! several times over on the network printer again
+URxvt.print-pipe: cat > /dev/null
 
 ! Cursor
 URxvt.cursorBlink:          true
