@@ -58,49 +58,11 @@ alias hb="cd /home/espen/workspace/oms/hb/client"
 alias jaws="cd /home/espen/workspace/oms/jaws"
 alias rested="cd ~/workspace/diverse/RESTED"
 
-# Not all servers support rxvt-univode-256color
+# Not all servers support rxvt-univode-256color,
+# use something safe instead
 alias ssh="TERM=xterm ssh"
 
 alias gu="git up"
-
-###############
-#  Functions  #
-###############
-
-# Usage: lg hb hb-collect warn
-lg() {
-  local level=${3:-debug}
-
-  if [ -z "$1" ]; then
-    echo Project is required
-  elif [ "$2" == "catalina" ]; then
-    $PAGER /local/home/c_$1/catalina/logs/catalina.out
-  elif [ -z "$2" ]; then
-    $PAGER /local/home/c_$1/catalina/logs/$1.$level.log
-  else
-    $PAGER /local/home/c_$1/catalina/logs/$2.$level.log
-  fi
-}
-
-# Usage: rc hb start
-rc() {
-  if [ -z "$1" ]; then
-    echo Project is required
-  elif [ -z "$2" ]; then
-    echo action is required
-  else
-    /local/home/c_$1/catalina/rc $2
-  fi
-}
-
-# Usage: logs hb
-logs() {
-  if [ -z "$1" ]; then
-    cd /local/home
-  else
-    cd /local/home/c_$1/catalina/logs
-  fi
-}
 
 ############################
 #  GPG agent as SSH agent  #
@@ -132,7 +94,7 @@ export GPGKEY=0E25CFCC
 #  TMUX  #
 ##########
 
-# Use i3 instead of tmux
+# I use i3 instead of tmux
 # if [[ ! "$TMUX" ]] && [[ $(tty | fgrep pts) ]] && [[ ! $SSH_CONNECTION ]]
 # then
 #   tmux
