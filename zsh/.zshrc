@@ -56,7 +56,7 @@ alias vip="cd ~/workspace/vps/vip-gui/investorportal-web"
 alias dn="cd /home/espen/workspace/oms/cust_dnfinans/trunk/webapp"
 alias hb="cd /home/espen/workspace/oms/hb/client"
 alias jaws="cd /home/espen/workspace/oms/jaws"
-alias rested="cd ~/workspace/diverse/RESTED"
+alias rested="cd ~/workspace/espen/RESTED"
 
 # Not all servers support rxvt-univode-256color,
 # use something safe instead
