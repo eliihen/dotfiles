@@ -14,7 +14,7 @@ Requirements for pretty much everything
 
 The requirements i3 wm I use are
 
-    i3 i3blocks feh playerctl sysstat compton scrot imagemagick
+    i3 i3blocks xautolock i3lock feh playerctl sysstat compton scrot imagemagick
 
 The requirements for vim is the following (Mostly because we need to compile
 YCM)
