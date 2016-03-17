@@ -210,6 +210,9 @@ exec spotify
 # Compositor
 exec compton
 
+# ownCloud sync
+exec owncloud
+
 # Run urxvt as a daemon to make startup instant
 exec urxvtd --quiet --opendisplay --fork
 
