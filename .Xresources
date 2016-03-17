@@ -1,9 +1,15 @@
+! Set $TERM variable
+URxvt.termName:             rxvt-unicode-256color
+
 ! Font
 URxvt.font:                 xft:Liberation Mono for Powerline:pixelsize=14
 URxvt.letterSpace:          -1
 
 ! Fugly scrollbar
 URxvt.scrollBar:            false
+
+!Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
+URxvt.iso14755:             False
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
