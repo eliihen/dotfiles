@@ -147,13 +147,20 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"""""""""
+"  GPG  "
+"""""""""
+let g:GPGExecutable = "gpg2"
+let g:GPGPreferArmor = 1
+let g:GPGPreferSign = 1
+let g:GPGDefaultRecipients = "0E25CFCC"
 
 """""""""""""""
 "  UltiSnips  "
 """""""""""""""
 let g:UltiSnipsExpandTrigger="<c-space>"
-let g:UltiSnipsJumpForwardTrigger="<s-j>"
-let g:UltiSnipsJumpBackwardTrigger="<s-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Where does the window to edit snippets open?
 let g:UltiSnipsEditSplit="vertical"
