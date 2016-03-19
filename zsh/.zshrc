@@ -90,6 +90,11 @@ export GPG_TTY=$(tty)
 
 export GPGKEY=0E25CFCC
 
+####################
+#  password-store  #
+####################
+export PASSWORD_STORE_DIR="$HOME/ownCloud/Documents/passwords/password_store"
+
 ##########
 #  TMUX  #
 ##########
