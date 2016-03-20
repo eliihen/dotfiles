@@ -206,6 +206,7 @@ exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.*
 # exec section - run only when i3 is started
 # Start programs on boot
 exec spotify
+exec firefox-developer
 
 # Compositor
 exec compton
@@ -215,6 +216,9 @@ exec owncloud
 
 # Run urxvt as a daemon to make startup instant
 exec urxvtd --quiet --opendisplay --fork
+
+# Start PIM (Mutt instances, khal)
+exec $HOME/workspace/espen/dotfiles/i3/scripts/start-pim.sh
 
 # Lock screen on inactivity
 exec --no-startup-id xautolock -time 5 -detectsleep -locker \
