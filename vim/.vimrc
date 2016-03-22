@@ -28,6 +28,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'junegunn/fzf.vim'
+Plugin 'wting/rust.vim'
 
 " Ultisnips and dependencies
 Plugin 'SirVer/ultisnips'
