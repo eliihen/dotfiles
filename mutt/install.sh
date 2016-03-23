@@ -7,8 +7,10 @@ DIR=`pwd`
 popd > /dev/null
 
 # Install mutt files
-ln   -vs $DIR/muttrc       $HOME/.muttrc
 mkdir -v $HOME/.mutt/
+mkdir -v $HOME/.mutt/temp
+mkdir -v $HOME/.mutt/scripts
+ln   -vs $DIR/muttrc       $HOME/.muttrc
 ln   -vs $DIR/mailcap      $HOME/.mutt/mailcap
 ln   -vs $DIR/colors.theme $HOME/.mutt/theme
 ln   -vs $DIR/config       $HOME/.vdirsyncer/config
