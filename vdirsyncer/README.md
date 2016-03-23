@@ -45,6 +45,7 @@ Then we need to set up a systemd timer for vdirsync.
 
     [Service]
     Type=oneshot
+    Environment="PASSWORD_STORE_DIR=WHERE_YOU_STORE_YOUR_PASS_PASSWORDS"
     ExecStart=/usr/bin/vdirsyncer sync
 
 Then create a user timer for that unit file that runs every 5 min
