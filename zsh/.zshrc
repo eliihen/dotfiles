@@ -2,24 +2,48 @@
 #  ZSH config  #
 ################
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="miloshadzic"
 
-plugins=(git)
+plugins=(
+  gpg-agent         # Auto-launch gpg-agent (also as ssh-agent)
+  vi-mode           # Proper support for vi-mode in shell
+  pj                # cd to local projects with completions
+  safe-paste        # Make pasting into the shell more safe
+  colored-man-pages # The name says it all
+  git               # git completions
+  mvn               # Maven completions
+  systemd           # systemd completions
+)
 
+# "Launch" OMZ
 source $ZSH/oh-my-zsh.sh
+
 
 ###########################
 #  Environment variables  #
 ###########################
 
+path=(
+  /local/java/jdk/bin
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/local/sbin
+  /usr/sbin
+  $HOME/.local/bin
+  $HOME/bin
+  /usr/local/bin
+  /opt/local/bin
+  $HOME/workspace/oms/deploy
+  $HOME/workspace/oms/util
+)
+
 # Google Go
 # export GOROOT=$HOME/golang/go
 export GOPATH=$HOME/golang/bin
-
-export PATH="/local/java/jdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/espen/.local/bin:/home/espen/bin:/usr/local/bin:$PATH:/opt/local/bin:/home/espen/workspace/oms/deploy:/home/espen/workspace/oms/util:"
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
@@ -27,7 +51,6 @@ export TERM=rxvt-unicode-256color
 
 export SVNROOT=svn+ssh://svn.osl.manamind.com/export/svn
 export JAVA_HOME=/local/java/jdk1.8.0_51
-export FLEX_HOME="/local/flex"
 export ANT_HOME="/usr/share/ant/"
 export COLLECT_HOME="/local/collect/default"
 export COLLECT_DOMAIN="/local/home/c_hb/domain"
@@ -40,23 +63,16 @@ export OPENSSL_ENABLE_MD5_VERIFY=1
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048
 
+
 #############
 #  Aliases  #
 #############
 
-alias java1.8='export JAVA_HOME=/local/java/jdk1.8.0_51'
-alias java1.7='export JAVA_HOME=/local/java/jdk1.7.0_79'
-alias java1.6='export JAVA_HOME=/local/java/jdk1.6.0_31'
+alias java8='export JAVA_HOME=/local/java/jdk1.8.0_51'
+alias java7='export JAVA_HOME=/local/java/jdk1.7.0_79'
+alias java6='export JAVA_HOME=/local/java/jdk1.6.0_31'
 
-alias work="cd ~/workspace/oms"
-alias deploys="cd ~/workspace/oms/deploy/full-deploy"
-alias afm="cd ~/workspace/oms/cust_afm/trunk/webapp"
-alias fish="cd ~/workspace/oms/cust_fishpool/trunk/webapp"
-alias vip="cd ~/workspace/vps/vip-gui/investorportal-web"
-alias dn="cd /home/espen/workspace/oms/cust_dnfinans/trunk/webapp"
-alias hb="cd /home/espen/workspace/oms/hb/client"
-alias jaws="cd /home/espen/workspace/oms/jaws"
-alias rested="cd ~/workspace/espen/RESTED"
+alias work="cd $HOME/workspace/oms"
 
 # Not all servers support rxvt-univode-256color,
 # use something safe instead
@@ -64,46 +80,25 @@ alias ssh="TERM=xterm ssh"
 
 alias gu="git up"
 
-############################
-#  GPG agent as SSH agent  #
-############################
 
-unset GPG_AGENT_INFO
+###################
+#  PJ - projects  #
+###################
 
-pgrep "gpg-agent" > /dev/null
-if [ $? != 0 ]; then
-  gpg-agent --daemon --enable-ssh-support
-fi
+PROJECT_PATHS=(
+  $HOME/workspace/oms
+  $HOME/workspace/vps
+  $HOME/workspace/espen
+  $HOME/workspace/diverse
+)
 
-export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-fi
-
-
-#export GPG_AGENT_INFO
-#export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
-#export SSH_AGENT_PID="$(pgrep gpg-agent)"
-
-export GPG_TTY=$(tty)
-
-export GPGKEY=0E25CFCC
 
 ####################
 #  password-store  #
 ####################
+
 export PASSWORD_STORE_DIR="$HOME/ownCloud/Documents/passwords/password_store"
 
-##########
-#  TMUX  #
-##########
-
-# I use i3 instead of tmux
-# if [[ ! "$TMUX" ]] && [[ $(tty | fgrep pts) ]] && [[ ! $SSH_CONNECTION ]]
-# then
-#   tmux
-# fi
 
 #########
 #  NVM  #
@@ -117,5 +112,5 @@ export NVM_DIR="/home/espen/.nvm"
 #  FZF  #
 #########
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
