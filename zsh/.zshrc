@@ -5,7 +5,7 @@
 # Path to oh-my-zsh installation
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="miloshadzic"
+ZSH_THEME="flazz"
 
 plugins=(
   gpg-agent         # Auto-launch gpg-agent (also as ssh-agent)
@@ -27,16 +27,15 @@ source $ZSH/oh-my-zsh.sh
 ###########################
 
 path=(
-  /local/java/jdk/bin
   /usr/local/bin
   /usr/bin
   /bin
   /usr/local/sbin
   /usr/sbin
+  /opt/local/bin
+  /local/java/jdk/bin
   $HOME/.local/bin
   $HOME/bin
-  /usr/local/bin
-  /opt/local/bin
   $HOME/workspace/oms/deploy
   $HOME/workspace/oms/util
 )
@@ -81,6 +80,17 @@ alias ssh="TERM=xterm ssh"
 alias gu="git up"
 
 
+#############################
+#  Built-in zsh mail check  #
+#############################
+
+# Build mailpath array from folders in Maildir
+# This makes zsh check isync maildirs for new mail
+unset mailpath
+mailpref=$HOME/Maildir
+mailpath=( $(ls -d $mailpref/*) )
+
+
 ###################
 #  PJ - projects  #
 ###################
@@ -98,6 +108,13 @@ PROJECT_PATHS=(
 ####################
 
 export PASSWORD_STORE_DIR="$HOME/ownCloud/Documents/passwords/password_store"
+
+
+####################
+#  vi-mode prompt  #
+####################
+
+export MODE_INDICATOR="%{$fg_bold[white]%}%{$bg[yellow]%} NORMAL %{$reset_color%}"
 
 
 #########
