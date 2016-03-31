@@ -38,6 +38,7 @@ path=(
   $HOME/bin
   $HOME/workspace/oms/deploy
   $HOME/workspace/oms/util
+  /local/collect/default/product/bin
 )
 
 # Google Go
@@ -129,5 +130,6 @@ export NVM_DIR="/home/espen/.nvm"
 #  FZF  #
 #########
 
+export FZF_DEFAULT_OPTS="--exact"
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
