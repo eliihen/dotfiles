@@ -6,6 +6,10 @@ interesting, go ahead and take whatever you want from my dotfiles.
 You probably don't want to run my install scripts, those are for my own use. But
 feel free if you want.
 
+I use Fedora, Arch and Gentoo linux for my workstations, and these files should
+work just fine with those distributions. YMMV with other distributions or
+operating systems.
+
 # Requirements for install scripts
 
 Requirements for pretty much everything
