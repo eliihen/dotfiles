@@ -47,6 +47,7 @@ export GOPATH=$HOME/golang/bin
 
 export LANG=en_US.UTF-8
 export EDITOR=vim
+export PAGER=less
 export TERM=rxvt-unicode-256color
 
 export SVNROOT=svn+ssh://svn.osl.manamind.com/export/svn
@@ -55,6 +56,7 @@ export ANT_HOME="/usr/share/ant/"
 export COLLECT_HOME="/local/collect/default"
 export COLLECT_DOMAIN="/local/home/c_hb/domain"
 export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # Work VPN is old
 export NSS_HASH_ALG_SUPPORT=+MD5
