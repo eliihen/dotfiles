@@ -28,3 +28,8 @@ mailcap file.
 With `urlview` you can press `C-b` (Twice if you use tmux) to activate
 any urls in the email.
 
+## SMTP
+
+I use [msmtp](https://wiki.archlinux.org/index.php/Msmtp) to send emails from
+mutt. Read more about this in the msmtp folder.
+

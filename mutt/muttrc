@@ -1,6 +1,3 @@
-# Source mutt passwords
-# source "gpg2 -dq $HOME/.mutt/mutt_passwords.gpg |"
-
 #####################
 #  General Options  #
 #####################
@@ -102,6 +99,9 @@ bind index G  last-entry   # cursor to last a la vim
 # TODO get hotkey for c to go directly to folder view
 # TODO hotkeys for switching INBOXes
 
+# Enter mutt command mode
+bind index ':' enter-command
+
 
 #########################
 #  Address book: khard  #
@@ -153,12 +153,8 @@ set certificate_file = ~/.mutt/certificates
 #  SMTP: msmtp  #
 #################
 
-# TODO
-# Set in external  config
-# set from     = "steve@stevelosh.com"
-# set sendmail = "/usr/local/bin/msmtp -a stevelosh"
+# Additional config set in ~/.msmtprc
 set sendmail_wait = 0    # Wait for sending to finish, so errors are obvious
-# set record = +Sent       # Where to save sent messages
 
 
 ##############
@@ -167,5 +163,9 @@ set sendmail_wait = 0    # Wait for sending to finish, so errors are obvious
 
 set spoolfile = "+espen_at_henriksen/INBOX" # Default folder on open
 
-# TODO SMTP accounts alongside msmtp
+# Set SMTP account based on active folder
+folder-hook espen_at_henriksen           'source ~/.mutt/profiles/espen_at_henriksen'
+folder-hook dev_at_henriksen             'source ~/.mutt/profiles/dev_at_henriksen'
+folder-hook espen_at_me                  'source ~/.mutt/profiles/espen_at_me'
+folder-hook espen_at_oslomarketsolutions 'source ~/.mutt/profiles/espen_at_oslomarketsolutions'
 
