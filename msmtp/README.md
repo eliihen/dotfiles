@@ -53,11 +53,11 @@ I am always using the configured SMTP credentials for my current folder.
 The profiles are in `mutt/profiles`, but they are encrypted. If you want a
 profile like mine, fill out files in `~/.mutt/profiles` that look like this
 
-   # Set misc account variables for mutt
-   set from      = "you@example.com"               # From address in email
-   set record    = +you_at_example_dot_com/Sent    # Where to save sent messages
-   set postponed = +you_at_example_dot_com/Drafts  # Where postponed messages are saved
+    # Set misc account variables for mutt
+    set from      = "you@example.com"               # From address in email
+    set record    = +you_at_example_dot_com/Sent    # Where to save sent messages
+    set postponed = +you_at_example_dot_com/Drafts  # Where postponed messages are saved
 
-   # Run msmtp with the correct account
-   set sendmail="/usr/bin/msmtp -a you_at_example_dot_com"
+    # Run msmtp with the correct account
+    set sendmail="/usr/bin/msmtp -a you_at_example_dot_com"
 
