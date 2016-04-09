@@ -90,18 +90,14 @@ set pgp_timeout=3600
 ##################
 
 # Every command that the user intends to use must be bound to a key
-# in advance, otherwise passwords will be visible to other users on
-# the system.
+# in advance, otherwise passwords will be visible to other users with
+# access to the session by executing enter-command set ?password-variable
 bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
 
 bind index gg first-entry  # cursor to first a la vim
 bind index G  last-entry   # cursor to last a la vim
 # TODO get hotkey for c to go directly to folder view
 # TODO hotkeys for switching INBOXes
-
-# Enter mutt command mode
-bind index ':' enter-command
-
 
 #########################
 #  Address book: khard  #
