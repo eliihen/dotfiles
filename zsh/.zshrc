@@ -62,6 +62,8 @@ export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
 
+export GPG_KEY=0E25CFCC
+
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048
 

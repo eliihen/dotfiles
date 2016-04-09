@@ -76,13 +76,22 @@ set crypt_use_gpgme=yes
 set crypt_replysign=yes
 set crypt_replysignencrypted=yes
 set pgp_timeout=3600
+set postpone_encrypt                    # Encrypt draft messages
+set postpone_encrypt_as=`echo $GPG_KEY` # ..to my main GPG key
 
 
 ##################
 #  Mutt Sidebar  #
 ##################
 
-# TODO
+# Toggle sidebar visible with b
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+
+# Uncomment these if sidebar patch is installed
+# bind index,pager \CP sidebar-prev # Ctrl-n to select next folder
+# bind index,pager \CN sidebar-next # Ctrl-p to select previous folder
+# bind index,pager \CO sidebar-open # Ctrl-o to open selected folder
 
 
 ##################
