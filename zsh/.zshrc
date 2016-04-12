@@ -58,6 +58,9 @@ export COLLECT_DOMAIN="/local/home/c_hb/domain"
 export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
+# Set proper location of gpg ssh agent socket
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+
 # Work VPN is old
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
@@ -66,6 +69,10 @@ export GPG_KEY=0E25CFCC
 
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048
+
+# 10ms for key sequences in zsh
+# Ensures we enter vi mode instantly
+KEYTIMEOUT=1
 
 
 #############
@@ -82,6 +89,9 @@ alias work="cd $HOME/workspace/oms"
 # use something safe instead
 alias ssh="TERM=xterm ssh"
 
+# Show gpg signatures when using git log
+alias glg="git log --stat --show-signature"
+alias gcd="git checkout develop"
 alias gu="git up"
 
 
