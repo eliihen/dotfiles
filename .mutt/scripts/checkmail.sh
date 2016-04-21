@@ -1,0 +1,1 @@
+/home/espen/workspace/espen/dotfiles/mutt/scripts/checkmail.sh
