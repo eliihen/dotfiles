@@ -1,1 +1,5 @@
 .mutt/profiles/*
+vpn/*
+.msmtprc
+.mbsyncrc
+.vdirsyncer/config
