@@ -3,3 +3,5 @@ vpn/*
 .msmtprc
 .mbsyncrc
 .vdirsyncer/config
+.offlineimaprc
+.offlineimap.py
