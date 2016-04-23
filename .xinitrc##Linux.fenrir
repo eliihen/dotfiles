@@ -1,0 +1,18 @@
+# Load Xresources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+
+# Set keyboard map
+setxkbmap no
+
+# Start pulseaudio daemon if not started
+start-pulseaudio-x11 &
+
+session=${1:-i3ck}
+
+case $session in
+  i3ck) exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3;;
+  i3  ) exec i3;;
+  kde ) exec startkde;;
+  *   ) exec $;;
+esac
+
