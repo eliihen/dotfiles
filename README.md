@@ -15,6 +15,10 @@ order to set up a new system with these dotfiles, do the following:
     yadm decrypt
     vim/install.sh
 
+    # If you use tmux, also do
+    mkdir -vp ~/.tmux/plugins
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Requirements for install scripts
 
 Requirements for pretty much everything
@@ -34,4 +38,5 @@ YCM)
 Requirements for zsh
 
     zsh rubygems
+
 
