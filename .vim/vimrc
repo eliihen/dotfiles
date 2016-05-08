@@ -63,9 +63,6 @@ let base16colorspace=256
 set expandtab
 set smarttab
 
-" Use relative numbering in the left margin
-set relativenumber
-
 " tty is fast, send more characters at a time, improving responsivenes
 set ttyfast
 
