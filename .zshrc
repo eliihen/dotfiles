@@ -41,6 +41,9 @@ path=(
   /local/collect/default/product/bin
 )
 
+# Add rustup to PATH
+source $HOME/.cargo/env
+
 # Google Go
 # export GOROOT=$HOME/golang/go
 export GOPATH=$HOME/golang/bin
@@ -83,17 +86,6 @@ alias work="cd $HOME/workspace/oms"
 alias ssh="TERM=xterm ssh"
 
 alias gu="git up"
-
-
-#############################
-#  Built-in zsh mail check  #
-#############################
-
-# Build mailpath array from folders in Maildir
-# This makes zsh check isync maildirs for new mail
-unset mailpath
-mailpref=$HOME/Maildir
-mailpath=( $(ls -d $mailpref/*) )
 
 
 ###################
