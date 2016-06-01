@@ -86,6 +86,10 @@ alias work="cd $HOME/workspace/oms"
 alias ssh="TERM=xterm ssh"
 
 alias gu="git up"
+alias gcd="git checkout develop"
+
+# I use a gutility for git-flow called gf, no need for git-fetch alias
+unalias gf
 
 
 ###################
