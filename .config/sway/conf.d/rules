@@ -1,0 +1,8 @@
+# Assign programs to workspaces when started
+for_window [class="Firefox"] move container to workspace $workspace2
+for_window [class="idea"] move container to workspace $workspace4
+for_window [class="telegram"] move container to workspace $workspace6
+for_window [class="(HipChat|Thunderbird)"] move container to workspace $workspace7
+for_window [class="(VLC|Spotify)"] move container to workspace $workspace10
+for_window [class="Spotify"] move container to workspace $workspace10
+
