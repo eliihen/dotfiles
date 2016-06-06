@@ -81,12 +81,15 @@ alias java6='export JAVA_HOME=/local/java/jdk1.6.0_31'
 
 alias work="cd $HOME/workspace/oms"
 
+alias s="sudo"
+
 # Not all servers support rxvt-univode-256color,
 # use something safe instead
 alias ssh="TERM=xterm ssh"
 
 alias gu="git up"
 alias gcd="git checkout develop"
+alias gds="git diff --staged"
 
 # I use a gutility for git-flow called gf, no need for git-fetch alias
 unalias gf
