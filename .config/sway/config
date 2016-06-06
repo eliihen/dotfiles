@@ -212,3 +212,6 @@ exec setxkbmap no
 
 # Read Xresources file
 exec xrdb ~/.Xresources
+
+# Load local config
+include ~/.config/sway/conf.d/`hostname`/*
