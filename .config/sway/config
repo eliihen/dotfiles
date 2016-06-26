@@ -1,6 +1,7 @@
 set $term urxvtc
 set $mod Mod4
 set $wallpaper $HOME/Pictures/wallpaper.jpg
+set $binaries $HOME/bin
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -115,10 +116,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exit
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+a move scratchpad
 
 # show the next scratchpad window or hide the focused scratchpad window.
-bindsym $mod+minus scratchpad show
+bindsym $mod+a scratchpad show
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -160,7 +161,7 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 hide_edge_borders both
-gaps inner 25
+gaps inner 17
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -175,8 +176,8 @@ bar {
 }
 
 # lock screen
-bindsym $mod+shift+x exec $HOME/bin/lock-system.sh
-#bindsym $mod+shift+x exec $HOME/bin/lock.sh $HOME/Pictures/lock.*
+bindsym $mod+shift+x exec $binaries/lock-system.sh
+#bindsym $mod+shift+x exec $binaries/lock.sh $HOME/Pictures/lock.*
 
 # exec section - run only when i3 is started
 # Start programs on boot
@@ -190,10 +191,10 @@ exec owncloud
 exec urxvtd --quiet --opendisplay --fork
 
 # Start PIM (Mutt instances, khal)
-# exec $HOME/bin/start-pim.sh
+# exec $binaries/start-pim.sh
 
 # Lock screen on inactivity
-# exec --no-startup-id xautolock -time 5 -detectsleep -locker "~/bin/lock.sh" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+# exec --no-startup-id xautolock -time 5 -detectsleep -locker "$binaries/lock.sh" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
 
 # Set norwegian keymap
 exec setxkbmap no
