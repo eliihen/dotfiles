@@ -59,7 +59,7 @@ export ANT_HOME="/usr/share/ant/"
 export COLLECT_HOME="/local/collect/default"
 export COLLECT_DOMAIN="/local/home/c_hb/domain"
 export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+#export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # Work VPN is old
 export NSS_HASH_ALG_SUPPORT=+MD5
