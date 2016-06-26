@@ -178,9 +178,6 @@ bar {
 bindsym $mod+shift+x exec $HOME/bin/lock-system.sh
 #bindsym $mod+shift+x exec $HOME/bin/lock.sh $HOME/Pictures/lock.*
 
-# Notify i3blocks when Caps lock is active
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-
 # exec section - run only when i3 is started
 # Start programs on boot
 exec spotify
