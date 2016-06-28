@@ -1,3 +1,11 @@
+# Monitors etc
+
+workspace $workspace3 output DVI-I-1
+workspace $workspace1 output DP-1
+workspace $workspace10 output DP-1
+workspace $workspace7 output HDMI-A-1
+workspace $workspace2 output HDMI-A-1
+
 output DVI-I-1  res 1920x1200 pos 0,240
 output DP-1     res 2560x1440 pos 1920,0
 output HDMI-A-1 res 2560x1440 pos 4480,0
