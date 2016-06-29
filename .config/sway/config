@@ -1,7 +1,11 @@
-set $term urxvtc
+set $term urxvt
 set $mod Mod4
 set $wallpaper $HOME/Pictures/wallpaper.jpg
 set $binaries $HOME/bin
+
+# For some reason, $PATH does not work properly with gdm.
+# Workaround to allow use of scripts etc
+set $pa-adjust $HOME/bin/pa-adjust
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -121,7 +125,15 @@ bindsym $mod+Shift+a move scratchpad
 # show the next scratchpad window or hide the focused scratchpad window.
 bindsym $mod+a scratchpad show
 
-# resize window (you can also use the mouse for that)
+# Special keys on keyboard
+bindsym XF86AudioMute exec $pa-adjust mute
+bindsym XF86AudioLowerVolume exec $pa-adjust minus
+bindsym XF86AudioRaiseVolume exec $pa-adjust plus
+bindsym $mod+XF86AudioLowerVolume exec $pa-adjust seekb
+bindsym $mod+XF86AudioRaiseVolume exec $pa-adjust seekf
+bindsym $mod+Shift+XF86AudioLowerVolume exec $pa-adjust seekbb
+bindsym $mod+Shift+XF86AudioRaiseVolume exec $pa-adjust seekff
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -152,13 +164,14 @@ set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $indicator-color     #00ff00
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused          $bg-color           $bg-color          $text-color          $indicator-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
 
 hide_edge_borders both
 gaps inner 17
@@ -179,16 +192,17 @@ bar {
 bindsym $mod+shift+x exec $binaries/lock-system.sh
 #bindsym $mod+shift+x exec $binaries/lock.sh $HOME/Pictures/lock.*
 
-# exec section - run only when i3 is started
+# Load local config
+include ~/.config/sway/conf.d/*
+include ~/.config/sway/conf.d/`hostname`/*
+
+# exec section - run when sway is started
 # Start programs on boot
 exec spotify
 exec firefox-developer
 
 # ownCloud sync
 exec owncloud
-
-# Run urxvt as a daemon to make startup instant
-exec urxvtd --quiet --opendisplay --fork
 
 # Start PIM (Mutt instances, khal)
 # exec $binaries/start-pim.sh
@@ -201,7 +215,3 @@ exec setxkbmap no
 
 # Read Xresources file
 exec xrdb ~/.Xresources
-
-# Load local config
-include ~/.config/sway/conf.d/*
-include ~/.config/sway/conf.d/`hostname`/*

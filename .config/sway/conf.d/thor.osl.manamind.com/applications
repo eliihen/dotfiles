@@ -1,0 +1,5 @@
+# Launch applications on startup
+
+exec thunderbird
+exec hipchat4
+
