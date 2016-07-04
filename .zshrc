@@ -59,13 +59,17 @@ export ANT_HOME="/usr/share/ant/"
 export COLLECT_HOME="/local/collect/default"
 export COLLECT_DOMAIN="/local/home/c_hb/domain"
 export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
-#export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 # Work VPN is old
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
 
 export GPG_KEY=0E25CFCC
+
+# If SSH_AUTH_SOCK not set in gpg-agent plugin, set sane default
+if [ -z $SSH_AUTH_SOCK ]; then
+  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+fi
 
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048

@@ -1,0 +1,7 @@
+# Override default options
+
+smart_gaps on
+
+# Set terminal to 256color urxvt
+bindsym $mod+Return exec urxvt256c-ml
+

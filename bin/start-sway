@@ -1,0 +1,6 @@
+#!/bin/bash
+
+start-pulseaudio-x11 &
+
+export XKB_DEFAULT_LAYOUT=no
+sway
