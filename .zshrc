@@ -94,6 +94,7 @@ alias ssh="TERM=xterm ssh"
 alias gu="git up"
 alias gcd="git checkout develop"
 alias gds="git diff --staged"
+alias gc-="git checkout -"
 
 # I use a gutility for git-flow called gf, no need for git-fetch alias
 unalias gf
