@@ -105,7 +105,7 @@ bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' no
 
 bind index gg first-entry  # cursor to first a la vim
 bind index G  last-entry   # cursor to last a la vim
-# TODO get hotkey for c to go directly to folder view
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 # TODO hotkeys for switching INBOXes
 
 #########################
@@ -139,9 +139,9 @@ spam "X-Spam-Score: ([0-9\\.]+).*" "SA: %1"
 set pager_format = " %C - %[%H:%M] %.20v, %s%* %?H? [%H] ?"
 
 
-#################
-#  IMAP: isync  #
-#################
+#######################
+#  IMAP: offlineimap  #
+#######################
 
 set mbox_type = Maildir
 
@@ -172,5 +172,5 @@ set spoolfile = "+espen_at_henriksen/INBOX" # Default folder on open
 folder-hook espen_at_henriksen           'source ~/.mutt/profiles/espen_at_henriksen'
 folder-hook dev_at_henriksen             'source ~/.mutt/profiles/dev_at_henriksen'
 folder-hook espen_at_me                  'source ~/.mutt/profiles/espen_at_me'
-folder-hook espen_at_oslomarketsolutions 'source ~/.mutt/profiles/espen_at_oslomarketsolutions'
+folder-hook espen_at_oms                 'source ~/.mutt/profiles/espen_at_oslomarketsolutions'
 
