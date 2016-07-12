@@ -1,0 +1,12 @@
+[Unit]
+Description=Start offlineimap as a daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/offlineimap
+Environment="PASSWORD_STORE_DIR=/home/espen/ownCloud/Documents/passwords/password_store"
+KillSignal=SIGUSR2
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

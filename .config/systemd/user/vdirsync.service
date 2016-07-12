@@ -1,0 +1,10 @@
+[Unit]
+Description=Check DAV store for updates
+RefuseManualStart=no
+RefuseManualStop=yes
+
+[Service]
+Type=oneshot
+Environment="PASSWORD_STORE_DIR=/home/espen/ownCloud/Documents/passwords/password_store"
+ExecStart=/usr/bin/vdirsyncer sync
+
