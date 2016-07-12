@@ -112,8 +112,8 @@ macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 #  Address book: khard  #
 #########################
 
-set query_command= "khard email -s %s"  # Khard freetextsearch as command
-bind editor <Tab> complete-query        # Tabcomplete emails
+set query_command= "khard email -p %s" #  Khard freetextsearch as command
+bind editor <Tab> complete-query                 # Tabcomplete emails
 bind editor ^T    complete
 
 # Add emails to address book by pressing A in pager
