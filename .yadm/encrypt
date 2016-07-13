@@ -1,6 +1,5 @@
 .mutt/profiles/*
 vpn/*
 .msmtprc
-.mbsyncrc
 .vdirsyncer/config
 .config/offlineimap/{config,scripts.py}
