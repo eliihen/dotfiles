@@ -141,3 +141,9 @@ export NVM_DIR="/home/espen/.nvm"
 export FZF_DEFAULT_OPTS="--exact"
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
+
+# Print today's agenda
+if hash khal 2>/dev/null; then
+  khal agenda
+fi
+
