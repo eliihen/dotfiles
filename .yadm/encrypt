@@ -3,4 +3,4 @@ vpn/*
 .msmtprc
 .mbsyncrc
 .vdirsyncer/config
-.config/offlineimap/*
+.config/offlineimap/{config,scripts.py}
