@@ -32,7 +32,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 
 # start password menu
-bindsym $mod+Shift+d exec passmenu -p "Password:" -l 10
+bindsym $mod+Shift+d exec $binaries/pass-dmenu
 
 # change focus
 bindsym $mod+h focus left
@@ -135,26 +135,26 @@ bindsym $mod+Shift+XF86AudioLowerVolume exec $pa-adjust seekbb
 bindsym $mod+Shift+XF86AudioRaiseVolume exec $pa-adjust seekff
 
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+  # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -179,13 +179,13 @@ gaps inner 17
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
-        tray_output primary
-        colors {
-          statusline #ffffff
-          background #000000
-          inactive_workspace #32323200 #32323200 #5c5c5c
-        }
+  status_command i3blocks
+  tray_output primary
+  colors {
+    statusline #ffffff
+    background #000000
+    inactive_workspace #32323200 #32323200 #5c5c5c
+  }
 }
 
 # lock screen
@@ -200,6 +200,9 @@ include ~/.config/sway/conf.d/`hostname`/*
 # Start programs on boot
 exec spotify
 exec firefox-developer
+
+# start dunst server (close notification with mod+n)
+exec dunst
 
 # ownCloud sync
 exec owncloud
