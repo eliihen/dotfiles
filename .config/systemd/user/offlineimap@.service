@@ -1,9 +1,9 @@
 [Unit]
-Description=Start offlineimap as a daemon
+Description=Offlineimap Service for account %i
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/offlineimap
+ExecStart=/usr/bin/offlineimap -a %i
 Environment="PASSWORD_STORE_DIR=/home/espen/ownCloud/Documents/passwords/password_store"
 KillSignal=SIGUSR2
 Restart=always
