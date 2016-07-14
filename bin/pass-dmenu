@@ -3,6 +3,10 @@
 
 set -e
 pass_basename="$(basename $PASSWORD_STORE_DIR)"
-target=$(find $PASSWORD_STORE_DIR -type f | sed -re "s/\.gpg$//" | sed -re "s/^.*\/$pass_basename\///" | dmenu -l 10 -sb \#E8180C -nb \#FF004F)
-pass -c "$target"
-notify-send -u critical -t 30 "Password in clipboard" "Your $target password is currently in your clipboard."
+target=$(find $PASSWORD_STORE_DIR -type f | sed -re "s/\.gpg$//" | sed -re "s/^.*\/$pass_basename\///" | dmenu -i -l 10 -sb \#E8180C -nb \#FF004F)
+
+if pass -c "$target"; then
+  notify-send -u critical -t 30 "Password in clipboard" "Your $target password is currently in your clipboard."
+else
+  notify-send -u critical -t 30 "Error" "Could not fetch password for $target"
+fi
