@@ -133,6 +133,9 @@ cnoreabbrev <expr> h getcmdtype() == ":" && getcmdline() == 'h' ? 'tab help' : '
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=*/node_modules/*
 
+" JSX highlighting in js files
+let g:jsx_ext_required = 0
+
 """""""""""""""
 "  Syntastic  "
 """""""""""""""
