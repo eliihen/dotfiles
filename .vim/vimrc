@@ -17,6 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/vim-svngutter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'shumphrey/fugitive-gitlab.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'chriskempson/base16-vim'
 Plugin 'pangloss/vim-javascript'
@@ -135,6 +136,9 @@ set wildignore+=*/node_modules/*
 
 " JSX highlighting in js files
 let g:jsx_ext_required = 0
+
+" :Gbrowse work with work gitlab
+let g:fugitive_gitlab_domains = ['http://git.osl.manamind.com']
 
 """""""""""""""
 "  Syntastic  "
