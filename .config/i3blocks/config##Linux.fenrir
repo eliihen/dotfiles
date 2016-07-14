@@ -109,7 +109,7 @@ interval=5
 label=CPU
 interval=10
 min_width=CPU 100.0%
-#separator=false
+separator=false
 
 [load_average]
 label=LOAD
