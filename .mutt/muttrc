@@ -36,6 +36,7 @@ auto_view text/html        # Trigger Lynx for text/html
 set sort=threads                # Enable treading
 set sort_aux=last-date-received # Sort threads by date
 set strict_threads=yes
+set duplicate_threads=yes       # Tag duplicate thread messages with ~=
 
 
 ###########
