@@ -1,21 +1,20 @@
 [global]
-    font = "DejaVu Sans Mono 10"
+    font = "Literation Mono Powerline 10"
     allow_markup = yes
     format = "<b>%s %p</b>\n%b"
     sort = yes
     indicate_hidden = true
-    # geometry = "x5"
-    transparency = 40
+    transparency = 0
     idle_threshold = 0
-    geometry = "300x5-20+20"
+    geometry = "300x5-20-20"
     alignment = center
-    show_age_threshold = 30
+    show_age_threshold = -1
     sticky_history = yes
     follow = mouse
     word_wrap = yes
     separator_height = 2
     padding = 10
-    horizontal_padding = 10
+    horizontal_padding = 8
     separator_color = frame
     startup_notification = false
     dmenu = "/usr/bin/dmenu -p dunst: -nb #FFFFFF -nf #000000 -sb #94DBFF -sf #000000"
@@ -23,25 +22,25 @@
     icon_position = left
 
 [frame]
-    width = 3
-    color = "#000000"
+    width = 0
+    color = "#222222"
 
 [shortcuts]
     close = mod4+n
 
 [urgency_low]
-    background = "#ffffff"
-    foreground = "#000000"
+    background = "#222222"
+    foreground = "#DDDDDD"
     timeout = 5
 
 [urgency_normal]
-    background = "#94DBFF"
-    foreground = "#000000"
+    background = "#222222"
+    foreground = "#DDAAAA"
     timeout = 10
 
 [urgency_critical]
-    background = "#ff9999"
-    foreground = "#000000"
+    background = "#222222"
+    foreground = "#CC5555"
     timeout = 10
 
 

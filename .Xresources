@@ -2,7 +2,7 @@
 URxvt.termName:             rxvt-unicode-256color
 
 ! Font
-URxvt.font:                 xft:Liberation Mono for Powerline:pixelsize=14
+URxvt.font:                 xft:Liberation Mono for Powerline:size=10:antialias=true:hinting=true
 URxvt.letterSpace:          -1
 
 ! Fugly scrollbar
@@ -19,9 +19,6 @@ URxvt.urlLauncher:          firefox-developer
 ! Disable PrtSc-button print so we dont accidentally print all our source code
 ! several times over on the network printer again
 URxvt.print-pipe: cat > /dev/null
-
-! Bell
-URxvt*urgentOnBell:         true
 
 ! Cursor
 URxvt.cursorBlink:          true
