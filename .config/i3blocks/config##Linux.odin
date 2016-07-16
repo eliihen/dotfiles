@@ -53,6 +53,7 @@ separator=false
 [volume]
 label=VOL
 #label=♪
+command=amixer get Master | grep -E -o '[0-9]{1,3}?%' | head -1
 instance=Master
 #instance=PCM
 interval=once

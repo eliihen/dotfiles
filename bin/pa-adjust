@@ -1,7 +1,7 @@
 #!/bin/bash
- 
+
 # CHANGES, RE-VIEWS/WRITES, IMPROVEMENTS:
-# mhasko: functions; VOL-steps; 
+# mhasko: functions; VOL-steps;
 # gashapon: autodectect default sink
 # konrad: more reliable way to autodetect default sink
 
@@ -28,40 +28,46 @@ fi
 
 # get default sink name
 SINK_NAME=$(pactl info | grep "alsa_output" | perl -a -n -e 'print $F[2]')
- 
+
 # set max allowed volume; 0x10000 = 100%
 VOL_MAX="0x10000"
- 
+
 STEPS="32" # 2^n
 VOL_STEP=$((VOL_MAX / STEPS))
- 
+
 VOL_NOW=`pacmd dump | grep -P "^set-sink-volume $SINK_NAME\s+" | perl -p -n -e 's/.+\s(.x.+)$/$1/'`
 MUTE_STATE=`pacmd dump | grep -P "^set-sink-mute $SINK_NAME\s+" | perl -p -n -e 's/.+\s(yes|no)$/$1/'`
- 
+
 function plus() {
         VOL_NEW=$((VOL_NOW + VOL_STEP))
         if [ $VOL_NEW -gt $((VOL_MAX)) ]; then
                 VOL_NEW=$((VOL_MAX))
         fi
         pactl set-sink-volume $SINK_NAME `printf "0x%X" $VOL_NEW`
+        # Tell i3blocks to update
+        pkill -RTMIN+10 i3blocks
 }
- 
+
 function minus() {
         VOL_NEW=$((VOL_NOW - VOL_STEP))
         if [ $(($VOL_NEW)) -lt $((0x00000)) ]; then
                 VOL_NEW=$((0x00000))
         fi
         pactl set-sink-volume $SINK_NAME `printf "0x%X" $VOL_NEW`
+        # Tell i3blocks to update
+        pkill -RTMIN+10 i3blocks
 }
- 
+
 function mute() {
         if [ $MUTE_STATE = no ]; then
                 pactl set-sink-mute $SINK_NAME 1
         elif [ $MUTE_STATE = yes ]; then
                 pactl set-sink-mute $SINK_NAME 0
         fi
+        # Tell i3blocks to update
+        pkill -RTMIN+10 i3blocks
 }
- 
+
 function get() {
         BAR=""
         if [ $MUTE_STATE = yes ]; then
@@ -86,7 +92,7 @@ function get() {
         fi
         echo "$BAR"
 }
- 
+
 case "$1" in
         plus)
                 plus
