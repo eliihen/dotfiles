@@ -3,21 +3,15 @@
 Hi! These are my dotfiles that I use every day. If you find something
 interesting, go ahead and take whatever you want from my dotfiles.
 
-I use Fedora, Arch and Gentoo linux for my workstations, and these files should
-work just fine with those distributions. YMMV with other distributions or
-operating systems.
-
 It is managed using [yadm](https://github.com/TheLocehiliosan/yadm/), a dotfile
 manager. This makes it simple to set up a new computer with these files. In
 order to set up a new system with these dotfiles, do the following:
 
     yadm clone <repo URL>
     yadm decrypt
-    vim/install.sh
+    yadm perms
 
-    # If you use tmux, also do
-    mkdir -vp ~/.tmux/plugins
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+See subfolders for a short description of what the different programs are
 
 # Quick setup for Fedora
 
@@ -29,6 +23,7 @@ order to set up a new system with these dotfiles, do the following:
 
     # dnf copr enable thelocehiliosan/yadm
     # dnf copr enable nrechn/Sway
+    # dnf copr enable dperson/neovim
 
     # dnf install pciutils wget tar telnet pcsc-lite owncloud-client @base-x \
     vim util-linux-user zsh dmenu rxvt-unicode-256color-ml firefox pulseaudio \
@@ -38,7 +33,7 @@ order to set up a new system with these dotfiles, do the following:
     opensc bzip2 psmisc pulseaudio pulseaudio-module-x11 ntp \
     dejavu-sans-mono-fonts mesa-dri-drivers xorg-x11-server-Xwayland \
     yubikey-personalization-gui yadm sway automake gcc-c++ kernel-devel \
-    cmake python-devel python3-devel
+    cmake python-devel python3-devel neovim
 
     # Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
     # Install nvm https://github.com/creationix/nvm
@@ -46,7 +41,7 @@ order to set up a new system with these dotfiles, do the following:
 
     $ nvm install node
 
-    $ cd ~/.vim && ./install.sh
+    $ cd ~/.config/nvim && ./install.sh
 
     $ sudo pip install --update pip
     $ sudo pip install --update khard

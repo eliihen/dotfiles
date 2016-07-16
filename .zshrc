@@ -27,7 +27,6 @@ source $ZSH/oh-my-zsh.sh
 ###########################
 
 path=(
-  $HOME/bin
   /usr/local/bin
   /usr/bin
   /bin
@@ -36,6 +35,7 @@ path=(
   /opt/local/bin
   /local/java/jdk/bin
   $HOME/.local/bin
+  $HOME/bin
   $HOME/workspace/oms/deploy
   $HOME/workspace/oms/util
   /local/collect/default/product/bin
