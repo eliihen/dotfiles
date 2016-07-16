@@ -173,7 +173,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Where are snippets stored?
-let g:UltiSnipsSnippetsDir="~/.config/nvim/plugged/ultisnips/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 
