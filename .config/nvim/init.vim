@@ -14,13 +14,13 @@ Plug 'chriskempson/base16-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
+Plug 'jamessan/vim-gnupg'
 
 " Conditional loading
-Plug 'jamessan/vim-gnupg',      { 'for':  ['gpg', 'pgp', 'asc'] }
-Plug 'wting/rust.vim',          { 'for':  'rs' }
-Plug 'pangloss/vim-javascript', { 'for':  ['javascript', 'jsx'] }
-Plug 'mxw/vim-jsx',             { 'for':  ['javascript', 'jsx'] }
-Plug 'aklt/plantuml-syntax',    { 'for': 'puml' }
+Plug 'wting/rust.vim',          { 'for':  'rust' }
+Plug 'pangloss/vim-javascript', { 'for':  ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx',             { 'for':  ['javascript', 'javascript.jsx'] }
+Plug 'aklt/plantuml-syntax',    { 'for': 'plantuml' }
 Plug 'scrooloose/nerdtree',     { 'on':  'NERDTreeToggle' }
 
 " Post-install hooks

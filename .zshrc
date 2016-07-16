@@ -101,6 +101,7 @@ alias ya="yadm add"
 alias yd="yadm diff"
 alias yds="yadm diff --staged"
 alias yc="yadm commit"
+alias yp="yadm push"
 
 # I use a gutility for git-flow called gf, no need for git-fetch alias
 unalias gf
