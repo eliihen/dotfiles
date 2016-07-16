@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 ###########################
 
 path=(
+  $HOME/bin
   /usr/local/bin
   /usr/bin
   /bin
@@ -35,7 +36,6 @@ path=(
   /opt/local/bin
   /local/java/jdk/bin
   $HOME/.local/bin
-  $HOME/bin
   $HOME/workspace/oms/deploy
   $HOME/workspace/oms/util
   /local/collect/default/product/bin
@@ -49,7 +49,7 @@ source $HOME/.cargo/env
 export GOPATH=$HOME/golang/bin
 
 export LANG=en_US.UTF-8
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export TERM=rxvt-unicode-256color
 
@@ -95,6 +95,12 @@ alias gu="git up"
 alias gcd="git checkout develop"
 alias gds="git diff --staged"
 alias gc-="git checkout -"
+
+alias yst="yadm status"
+alias ya="yadm add"
+alias yd="yadm diff"
+alias yds="yadm diff --staged"
+alias yc="yadm commit"
 
 # I use a gutility for git-flow called gf, no need for git-fetch alias
 unalias gf
