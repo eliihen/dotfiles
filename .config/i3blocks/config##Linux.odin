@@ -24,7 +24,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/lib/i3blocks/$BLOCK_NAME
+command=/usr/local/libexec/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -77,29 +77,24 @@ signal=10
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-[disk]
-label=HOME
+#[disk]
+#label=HOME
 #instance=/mnt/data
-interval=30
+#interval=30
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
-#instance=wlan0
+instance=enp3s0
 color=#00FF00
 interval=10
-#separator=false
+separator=false
 
-[wifi]
-#instance=wlp3s0
-interval=10
-#separator=false
-
-#[bandwidth]
-#instance=eth0
-#interval=5
+[bandwidth]
+instance=enp3s0
+interval=5
 
 # CPU usage
 #
@@ -109,20 +104,11 @@ interval=10
 label=CPU
 interval=10
 min_width=CPU 100.0%
-#separator=false
+separator=false
 
 [load_average]
 label=LOAD
 interval=10
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-label=BAT
-#label=⚡
-#instance=1
-interval=30
 
 # Generic media player support
 #
@@ -137,8 +123,10 @@ signal=10
 # OpenVPN support
 #
 # Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+[vpn]
+label=VPN
+interval=5
+markup=pango
 
 # Temperature
 #
