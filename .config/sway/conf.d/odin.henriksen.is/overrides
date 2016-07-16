@@ -1,0 +1,5 @@
+# Override default options
+
+# Set terminal to 256color urxvt
+bindsym $mod+Return exec urxvt256c-ml
+
