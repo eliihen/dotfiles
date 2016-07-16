@@ -44,6 +44,8 @@ order to set up a new system with these dotfiles, do the following:
     # Install nvm https://github.com/creationix/nvm
     # Install rustup.rs http://rustup.rs/
 
+    $ nvm install node
+
     $ cd ~/.vim && ./install.sh
 
     $ sudo pip install --update pip
