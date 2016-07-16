@@ -19,24 +19,36 @@ order to set up a new system with these dotfiles, do the following:
     mkdir -vp ~/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Requirements for install scripts
+# Quick setup for Fedora
 
-Requirements for pretty much everything
+    This is based on a minimal Fedora 24 install, from the netinstall image
 
-    git nodejs npm
+    # dnf install --nogpgcheck \
+    http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-24.noarch.rpm \
+    http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-24.noarch.rpm
 
-The requirements i3 wm I use are
+    # dnf copr enable thelocehiliosan/yadm
+    # dnf copr enable nrechn/Sway
 
-    i3 i3blocks xautolock i3lock feh playerctl sysstat compton scrot imagemagick
+    # dnf install pciutils wget tar telnet pcsc-lite owncloud-client @base-x \
+    vim util-linux-user zsh dmenu rxvt-unicode-256color-ml firefox pulseaudio \
+    openvpn maven subversion nginx dunst mercurial libnotify VirtualBox \
+    bind-utils nmap vlc i3 pinentry-gtk ncurses-compat-libs msmtp lynx urlview \
+    mutt vdirsyncer khal offlineimap htop jq fedora-icon-theme pass pcsc-tools \
+    opensc bzip2 psmisc pulseaudio pulseaudio-module-x11 ntp \
+    dejavu-sans-mono-fonts mesa-dri-drivers xorg-x11-server-Xwayland \
+    yubikey-personalization-gui yadm sway automake gcc-c++ kernel-devel \
+    cmake python-devel python3-devel
 
-The requirements for vim is the following (Mostly because we need to compile
-YCM)
+    # Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
+    # Install nvm https://github.com/creationix/nvm
+    # Install rustup.rs http://rustup.rs/
 
-    vim automake gcc gcc-c++ kernel-devel cmake python-devel
-    python3-devel
+    $ cd ~/.vim && ./install.sh
 
-Requirements for zsh
+    $ sudo pip install --update pip
+    $ sudo pip install --update khard
 
-    zsh rubygems
-
+Now set up vdirsyncer, and offlineimap with the provided systemd unit files,
+after having created the required folders
 
