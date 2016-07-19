@@ -51,6 +51,7 @@ export GOPATH=$HOME/golang/bin
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export PAGER=less
+export BROWSER=firefox-developer
 export TERM=rxvt-unicode-256color
 
 export SVNROOT=svn+ssh://svn.osl.manamind.com/export/svn
