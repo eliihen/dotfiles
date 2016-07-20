@@ -8,5 +8,3 @@ Environment="PASSWORD_STORE_DIR=/home/espen/ownCloud/Documents/passwords/passwor
 KillSignal=SIGUSR2
 Restart=always
 
-[Install]
-WantedBy=multi-user.target
