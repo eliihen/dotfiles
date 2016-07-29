@@ -14,7 +14,7 @@ URxvt.iso14755:             False
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          firefox-developer
+URxvt.url-launcher:         firefox-developer
 
 ! Disable PrtSc-button print so we dont accidentally print all our source code
 ! several times over on the network printer again
