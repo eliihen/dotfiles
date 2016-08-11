@@ -48,7 +48,7 @@ URxvt*color10:              #54FF54
 URxvt*color3:               #B26818
 URxvt*color11:              #FFFF54
 ! blue
-URxvt*color4:               #1818B2
+URxvt*color4:               #2245ad
 URxvt*color12:              #5454FF
 ! purple
 URxvt*color5:               #B218B2
