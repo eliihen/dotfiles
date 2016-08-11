@@ -31,7 +31,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt256c-mlc
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -220,7 +220,7 @@ exec compton
 exec owncloud
 
 # Run urxvt as a daemon to make startup instant
-exec urxvtd --quiet --opendisplay --fork
+exec urxvt256c-mld --quiet --opendisplay --fork
 
 # Start PIM (Mutt instances, khal)
 exec $HOME/bin/start-pim.sh
