@@ -107,7 +107,7 @@ bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' no
 
 bind index gg first-entry  # cursor to first a la vim
 bind index G  last-entry   # cursor to last a la vim
-macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+# macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 # TODO hotkeys for switching INBOXes
 
 #########################
