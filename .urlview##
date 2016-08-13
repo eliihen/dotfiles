@@ -1,1 +1,1 @@
-COMMAND firefox-developer %s
+COMMAND qutebrowser %s
