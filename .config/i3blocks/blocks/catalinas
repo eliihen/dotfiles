@@ -1,0 +1,13 @@
+#!/bin/sh
+catalinas=$(pgrep -af catalina | sed -n 's/^\([0-9]*\).*c_\([a-z]*\).*/\2(\1)/p')
+first=true
+for catalina in $catalinas ;
+do
+    if $first ; then
+       first=false
+    else
+       echo " "
+    fi
+
+    echo "$catalina"
+done
