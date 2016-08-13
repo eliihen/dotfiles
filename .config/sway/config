@@ -15,6 +15,7 @@ font pango:DejaVu Sans Mono 8
 new_window pixel 1
 new_float pixel 1
 hide_edge_borders both
+gaps inner 17
 
 # Set background wallpaper
 output * bg $wallpaper fill
@@ -40,23 +41,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+g split h
@@ -116,7 +105,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# exit i3 (logs you out of your X session)
+# exit sway (logs you out of your X session)
 bindsym $mod+Shift+e exit
 
 # move the currently focused window to the scratchpad
@@ -152,12 +141,6 @@ mode "resize" {
   bindsym k resize shrink height 10 px or 10 ppt
   bindsym l resize grow width 10 px or 10 ppt
 
-  # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
-
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -173,14 +156,11 @@ set $urgent-bg-color     #E53935
 set $indicator-color     #00ff00
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $indicator-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color
-
-hide_edge_borders both
-gaps inner 17
+#                       border              background         text                 indicator        child_border
+client.focused          $bg-color           $bg-color          $text-color          $indicator-color $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $indicator-color $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $indicator-color $bg-color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -212,9 +192,6 @@ exec dunst
 
 # ownCloud sync
 exec owncloud
-
-# Start PIM (Mutt instances, khal)
-# exec $binaries/start-pim.sh
 
 # Lock screen on inactivity
 # exec --no-startup-id xautolock -time 5 -detectsleep -locker "$binaries/lock.sh" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"

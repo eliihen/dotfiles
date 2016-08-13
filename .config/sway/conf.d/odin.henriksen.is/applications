@@ -1,6 +1,5 @@
 # Launch applications on startup
 
-exec hipchat4
 exec spotify
-exec firefox-developer
+exec qutebrowser
 
