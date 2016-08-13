@@ -6,10 +6,12 @@
 
 # Overrides
 weekstart=monday
+# I pipe by default to suppress annoying message, and like colors
+_forcecolor=yes
 
 # Files
 data.location=~/ownCloud/data/task
 
-# Color theme (uncomment one to use)
+# Color theme
 include /usr/share/doc/task/rc/dark-256.theme
 
