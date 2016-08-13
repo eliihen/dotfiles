@@ -1,0 +1,15 @@
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Overrides
+weekstart=monday
+
+# Files
+data.location=~/ownCloud/data/task
+
+# Color theme (uncomment one to use)
+include /usr/share/doc/task/rc/dark-256.theme
+
