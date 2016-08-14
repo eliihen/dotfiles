@@ -135,6 +135,7 @@ let g:fzf_layout = { 'window': '-tabnew' }
 " Disable annoying preview pane at the top
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_rust_src_path = '/usr/local/src/rust/rustc-1.10.0/src'
 
 
 """""""""""""""
