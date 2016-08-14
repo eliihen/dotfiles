@@ -210,6 +210,9 @@ vnoremap <F1> <ESC>
 " Disable ex mode
 nnoremap Q <Nop>
 
+" Disable ex mode
+nnoremap Q :YcmCompleter GoTo<CR>
+
 
 """"""""""""
 "  Leader  "
@@ -245,12 +248,4 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
-
-
-""""""""""""
-"  NeoVIM  "
-""""""""""""
-
-" Get out of terminal mode with Esc
-tnoremap <Esc> <C-\><C-n>
 
