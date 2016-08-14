@@ -183,10 +183,6 @@ include ~/.config/sway/conf.d/*
 include ~/.config/sway/conf.d/`hostname`/*
 
 # exec section - run when sway is started
-# Start programs on boot
-exec spotify
-exec firefox-developer
-
 # start dunst server (close notification with mod+n)
 exec dunst
 
