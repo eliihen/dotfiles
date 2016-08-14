@@ -33,7 +33,7 @@ See subfolders for a short description of what the different programs are
     opensc bzip2 psmisc pulseaudio pulseaudio-module-x11 ntp \
     dejavu-sans-mono-fonts mesa-dri-drivers xorg-x11-server-Xwayland \
     yubikey-personalization-gui yadm sway automake gcc-c++ kernel-devel \
-    cmake python-devel python3-devel neovim
+    cmake python-devel python3-devel neovim task
 
     # Install oh-my-zsh https://github.com/robbyrussell/oh-my-zsh
     # Install nvm https://github.com/creationix/nvm
