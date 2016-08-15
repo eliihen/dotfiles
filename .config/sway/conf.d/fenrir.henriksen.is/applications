@@ -1,0 +1,4 @@
+# Launch applications on startup
+
+exec qutebrowser
+

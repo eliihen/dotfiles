@@ -135,6 +135,7 @@ let g:fzf_layout = { 'window': '-tabnew' }
 " Disable annoying preview pane at the top
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_rust_src_path = '/usr/local/src/rust/rustc-1.10.0/src'
 
 
 """""""""""""""
@@ -209,6 +210,9 @@ vnoremap <F1> <ESC>
 " Disable ex mode
 nnoremap Q <Nop>
 
+" Disable ex mode
+nnoremap Q :YcmCompleter GoTo<CR>
+
 
 """"""""""""
 "  Leader  "
@@ -244,12 +248,4 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
-
-
-""""""""""""
-"  NeoVIM  "
-""""""""""""
-
-" Get out of terminal mode with Esc
-tnoremap <Esc> <C-\><C-n>
 

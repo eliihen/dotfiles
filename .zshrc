@@ -7,8 +7,29 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="flazz"
 
+
+#################
+#  ZSH Plugins  #
+#################
+
+# Check if oh-my-zsh is installed
+if [ ! -d $ZSH ]; then
+  echo --------------------------
+  echo   Installing Oh-my-zsh
+  echo --------------------------
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
+# Install custom plugins
+if [ ! -d $ZSH/custom/plugins/zsh-nvm/ ]; then
+  echo --------------------------
+  echo    Installing zsh-nvm
+  echo --------------------------
+  git clone https://github.com/lukechilds/zsh-nvm $ZSH/custom/plugins/zsh-nvm
+fi
+
 plugins=(
-  gpg-agent         # Auto-launch gpg-agent (also as ssh-agent)
+  zsh-nvm           # Node version manager
   vi-mode           # Proper support for vi-mode in shell
   pj                # cd to local projects with completions
   safe-paste        # Make pasting into the shell more safe
@@ -18,7 +39,7 @@ plugins=(
   systemd           # systemd completions
 )
 
-# "Launch" OMZ
+# "Launch" Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
 
@@ -65,12 +86,13 @@ export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
 
-export GPG_KEY=0E25CFCC
+# Taskwarrior config file
+export TASKRC=$HOME/.config/task/config
 
-# If SSH_AUTH_SOCK not set in gpg-agent plugin, set sane default
-if [ -z $SSH_AUTH_SOCK ]; then
-  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-fi
+# I KNOW I'M OVERRIDING THE RC FILE DAMMIT
+export task() {
+  /usr/bin/task $@ 2>&1 | sed '/TASKRC override:/d'
+}
 
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048
@@ -134,12 +156,22 @@ export PASSWORD_STORE_DIR="$HOME/ownCloud/Documents/passwords/password_store"
 export MODE_INDICATOR="%{$fg_bold[white]%}%{$bg[yellow]%} NORMAL %{$reset_color%}"
 
 
-#########
-#  NVM  #
-#########
+###############
+#  gpg-agent  #
+###############
 
-export NVM_DIR="/home/espen/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export GPG_KEY=0E25CFCC
+export GPG_TTY=$(tty)
+
+# Fedora places the gpg-agent ssh socket in a weird place
+if [ -f /etc/redhat-release ]; then
+  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+else
+  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+fi
+
+# ssh does not auto-launch gpg-agent, we do it manually
+gpgconf --launch gpg-agent
 
 
 #########
@@ -150,8 +182,21 @@ export FZF_DEFAULT_OPTS="--exact"
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 
-# Print today's agenda
-if hash khal 2>/dev/null; then
-  khal agenda
-fi
+#####################
+#  Print to prompt  #
+#####################
+
+export todo() {
+  # Print taskwarrior todos
+  if hash task 2>/dev/null; then
+    task next
+  fi
+
+  # Print today's CalDav appointments
+  if hash khal 2>/dev/null; then
+    khal agenda
+  fi
+}
+
+todo
 
