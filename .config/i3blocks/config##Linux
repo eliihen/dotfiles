@@ -45,6 +45,10 @@ separator=false
 #interval=once
 #signal=11
 
+[catalinas]
+label=CATALINAS
+interval=2
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -77,10 +81,10 @@ signal=10
 # The directory defaults to $HOME if the instance is not specified.
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
-[disk]
-label=HOME
+#[disk]
+#label=HOME
 #instance=/mnt/data
-interval=30
+#interval=30
 
 # Network interface monitoring
 #
@@ -92,14 +96,14 @@ color=#00FF00
 interval=10
 #separator=false
 
-[wifi]
+#[wifi]
 #instance=wlp3s0
-interval=10
+#interval=10
 #separator=false
 
-#[bandwidth]
-#instance=eth0
-#interval=5
+[bandwidth]
+instance=enp3s0
+interval=5
 
 # CPU usage
 #
@@ -118,11 +122,11 @@ interval=10
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-label=BAT
+#[battery]
+#label=BAT
 #label=⚡
 #instance=1
-interval=30
+#interval=30
 
 # Generic media player support
 #
@@ -137,8 +141,8 @@ signal=10
 # OpenVPN support
 #
 # Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+[openvpn]
+interval=20
 
 # Temperature
 #
@@ -154,4 +158,5 @@ interval=10
 [time]
 command=date '+%H:%M:%S %d.%m.%Y'
 interval=1
+
 
