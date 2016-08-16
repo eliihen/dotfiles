@@ -89,11 +89,6 @@ export OPENSSL_ENABLE_MD5_VERIFY=1
 # Taskwarrior config file
 export TASKRC=$HOME/.config/task/config
 
-# I KNOW I'M OVERRIDING THE RC FILE DAMMIT
-export task() {
-  /usr/bin/task $@ 2>&1 | sed '/TASKRC override:/d'
-}
-
 # extend limit of concurrent watched files to avoid grunt error
 ulimit -n 2048
 

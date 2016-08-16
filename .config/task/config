@@ -6,8 +6,9 @@
 
 # Overrides
 weekstart=monday
-# I pipe by default to suppress annoying message, and like colors
-_forcecolor=yes
+
+# I god damn well know I'm overriding the TASKRC file, stop telling me
+verbose=nothing
 
 # Files
 data.location=~/ownCloud/data/task
