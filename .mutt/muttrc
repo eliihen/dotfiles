@@ -91,7 +91,7 @@ set sidebar_visible
 mailboxes = "=espen_at_henriksen/INBOX" \
             "=dev_at_henriksen/INBOX" \
             "=espen_at_oms/INBOX" \
-            "=espen_at_me/INBOX"
+            "=oldapple_at_henriksen/INBOX"
 
 # Toggle sidebar visible with b
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
