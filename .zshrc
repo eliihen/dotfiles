@@ -86,6 +86,9 @@ export DEPLOYSCRIPT_DIR="/home/espen/workspace/oms/deploy"
 export NSS_HASH_ALG_SUPPORT=+MD5
 export OPENSSL_ENABLE_MD5_VERIFY=1
 
+# Fix java apps for non-re-parenting window managers (like sway)
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Taskwarrior config file
 export TASKRC=$HOME/.config/task/config
 
@@ -123,6 +126,9 @@ alias yp="yadm push"
 
 # I use a gutility for git-flow called gf, no need for git-fetch alias
 unalias gf
+
+# Use most recent version by default
+nvm install node 2>&1 > /dev/null
 
 
 ###################
