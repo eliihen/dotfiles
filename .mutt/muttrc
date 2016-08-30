@@ -88,10 +88,29 @@ set postpone_encrypt_as=`echo $GPG_KEY` # ..to my main GPG key
 ##################
 
 set sidebar_visible
-mailboxes = "=espen_at_henriksen/INBOX" \
+set sidebar_folder_indent
+set sidebar_short_path
+mailboxes = "=espen_at_henriksen" \
+            "=espen_at_henriksen/INBOX" \
+            "=dev_at_henriksen" \
             "=dev_at_henriksen/INBOX" \
+            "=dev_at_henriksen/cron" \
+            "=espen_at_oms" \
             "=espen_at_oms/INBOX" \
-            "=oldapple_at_henriksen/INBOX"
+            "=espen_at_oms/Manamind.all" \
+            "=espen_at_oms/Manamind.alert" \
+            "=espen_at_oms/Manamind.general" \
+            "=espen_at_oms/Manamind.utvikling" \
+            "=oldapple_at_henriksen" \
+            "=oldapple_at_henriksen/INBOX" \
+            "=oldapple_at_henriksen/Junk" \
+            "=oldapple_at_henriksen/learnasham" \
+            "=oldapple_at_henriksen/Diverse" \
+            "=oldapple_at_henriksen/Jobb" \
+            "=oldapple_at_henriksen/Payroll" \
+            "=oldapple_at_henriksen/Annet.Div_Jobb" \
+            "=oldapple_at_henriksen/Annet.Kvitteringer" \
+            "=oldapple_at_henriksen/Oslo.Bolig_Oslo"
 
 # Toggle sidebar visible with b
 macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
