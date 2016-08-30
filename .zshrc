@@ -128,7 +128,7 @@ alias yp="yadm push"
 unalias gf
 
 # Use most recent version by default
-nvm install node 2>&1 > /dev/null
+nvm use node > /dev/null
 
 
 ###################
