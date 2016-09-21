@@ -164,12 +164,8 @@ export MODE_INDICATOR="%{$fg_bold[white]%}%{$bg[yellow]%} NORMAL %{$reset_color%
 export GPG_KEY=0E25CFCC
 export GPG_TTY=$(tty)
 
-# Fedora places the gpg-agent ssh socket in a weird place
-if [ -f /etc/redhat-release ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-else
-  export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-fi
+# gpg 2.1 or something changed the socket location
+export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 
 # ssh does not auto-launch gpg-agent, we do it manually
 gpgconf --launch gpg-agent
