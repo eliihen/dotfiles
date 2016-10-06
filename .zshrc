@@ -116,6 +116,7 @@ alias gu="git up"
 alias gcd="git checkout develop"
 alias gds="git diff --staged"
 alias gc-="git checkout -"
+alias glg="git log --stat --show-signature"
 
 alias yst="yadm status"
 alias ya="yadm add"
