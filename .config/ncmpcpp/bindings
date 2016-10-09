@@ -1,4 +1,4 @@
-# the t key isn't used and it's easier to press than /, so lets use it
+# Taken from https://gist.github.com/Soft/959188
 def_key "/"
     find
 def_key "/"
