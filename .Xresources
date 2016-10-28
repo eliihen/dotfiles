@@ -1,3 +1,4 @@
+! vim: set ft=xdefaults:
 ! Set $TERM variable
 URxvt.termName:             rxvt-unicode-256color
 
@@ -31,32 +32,36 @@ URxvt*urgentOnBell:         true
 ! Pointer
 URxvt.pointerBlank:         true
 
-! "Linux colors" from gentoo wiki
-! Colors
-URxvt*background:           #000000
-URxvt*foreground:           #B2B2B2
-! black
-URxvt*color0:               #000000
-URxvt*color8:               #686868
-! red
-URxvt*color1:               #B21818
-URxvt*color9:               #FF5454
-! green
-URxvt*color2:               #18B218
-URxvt*color10:              #54FF54
-! yellow
-URxvt*color3:               #B26818
-URxvt*color11:              #FFFF54
-! blue
-URxvt*color4:               #2245ad
-URxvt*color12:              #5454FF
-! purple
-URxvt*color5:               #B218B2
-URxvt*color13:              #FF54FF
-! cyan
-URxvt*color6:               #18B2B2
-URxvt*color14:              #54FFFF
-! white
-URxvt*color7:               #B2B2B2
-URxvt*color15:              #FFFFFF
+URvxt*depth:                32
+
+! Colors based on http://dotshare.it/dots/199/ with changes
+*foreground:                #EEEEEE
+
+! Grey BG
+*background:                #151515
+
+!black
+*color0:                    #393939
+*color8:                    #AF875F
+!red
+*color1:                    #BF1E2D
+*color9:                    #E7212A
+!green
+*color2:                    #9DBA3A
+*color10:                   #A9C938
+!yellow
+*color3:                    #F5B915
+*color11:                   #F7D325
+!blue
+*color4:                    #1CA1DB
+*color12:                   #00AFDA
+!magenta
+*color5:                    #652F90
+*color13:                   #894E9F
+!cyan
+*color6:                    #EA7D24
+*color14:                   #F79321
+!white
+*color7:                    #E7E8E9
+*color15:                   #F3F3F4
 
