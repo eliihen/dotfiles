@@ -3,14 +3,18 @@
 URxvt.termName:             rxvt-unicode-256color
 
 ! Font
-URxvt.font:                 xft:Liberation Mono for Powerline:size=10:antialias=true:hinting=true
+URxvt.font:                 xft:Literation Mono Powerline:size=10:antialias=true:hinting=true,\
+                            xft:Noto Mono:size=10:antialias=true:hinting=true,\
+                            xft:Noto Color Emoji,\
+                            xft:Unifont,\
+                            9x15
 URxvt.letterSpace:          -1
 
 ! Fugly scrollbar
 URxvt.scrollBar:            false
 
 !Disables the insanely annoying Ctrl+Shift shortcut that enters ISO14755 mode
-URxvt.iso14755:             False
+URxvt.iso14755:             false
 
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher,selection-to-clipboard
@@ -19,7 +23,7 @@ URxvt.url-launcher:         firefox-developer
 
 ! Disable PrtSc-button print so we dont accidentally print all our source code
 ! several times over on the network printer again
-URxvt.print-pipe: cat > /dev/null
+URxvt.print-pipe:           cat > /dev/null
 
 ! Cursor
 URxvt.cursorBlink:          true
@@ -32,36 +36,45 @@ URxvt*urgentOnBell:         true
 ! Pointer
 URxvt.pointerBlank:         true
 
-URvxt*depth:                32
 
-! Colors based on http://dotshare.it/dots/199/ with changes
-*foreground:                #EEEEEE
+! Colors taken from deterenkelts dotfiles
+! https://github.com/deterenkelt/dotfiles/blob/master/.Xresources
+!
+!! black
+URxvt.color0:  #000000
+URxvt.color8:  #555753
 
-! Grey BG
-*background:                #151515
+!! red
+URxvt.color1:  #CC0000
+URxvt.color9:  #EF2929
 
-!black
-*color0:                    #393939
-*color8:                    #AF875F
-!red
-*color1:                    #BF1E2D
-*color9:                    #E7212A
-!green
-*color2:                    #9DBA3A
-*color10:                   #A9C938
-!yellow
-*color3:                    #F5B915
-*color11:                   #F7D325
-!blue
-*color4:                    #1CA1DB
-*color12:                   #00AFDA
-!magenta
-*color5:                    #652F90
-*color13:                   #894E9F
-!cyan
-*color6:                    #EA7D24
-*color14:                   #F79321
-!white
-*color7:                    #E7E8E9
-*color15:                   #F3F3F4
+!! green
+URxvt.color2:  #4E9A06
+URxvt.color10:  #8AE234
+
+!! yellow
+URxvt.color3:  #C4A000
+URxvt.color11:  #FCE94F
+
+!! blue
+URxvt.color4:  #3465A4
+URxvt.color12:  #729FCF
+
+!! magenta
+URxvt.color5:  #75507B
+URxvt.color13:  #AD7FA8
+
+!! cyan
+URxvt.color6:  #06989A
+URxvt.color14:  #34E2E2
+
+!! white
+URxvt.color7:  #D3D7CF
+URxvt.color15:  #EEEEEC
+
+!! misc
+URxvt.foreground: #AAAAAA
+URxvt.background: #151515
+URxvt.colorBD: #ffffff
+URxvt.underlineColor: #75507B
 

@@ -1,5 +1,5 @@
 # Launch applications on startup
 
 exec spotify
-exec qutebrowser
+exec firefox-developer
 
