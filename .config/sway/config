@@ -1,6 +1,8 @@
+# vim: set syntax=conf:
+
 set $term urxvt
 set $mod Mod4
-set $wallpaper $HOME/Pictures/wallpaper.jpg
+set $wallpaper $HOME/Pictures/wallpaper.png
 set $binaries $HOME/bin
 
 # For some reason, $PATH does not work properly with gdm.
@@ -168,8 +170,8 @@ bar {
   status_command i3blocks
   tray_output primary
   colors {
-    statusline #ffffff
-    background #000000
+    background #00000066
+    statusline #ffffffdd
     inactive_workspace #32323200 #32323200 #5c5c5c
   }
 }
@@ -197,3 +199,4 @@ exec setxkbmap no
 
 # Read Xresources file
 exec xrdb ~/.Xresources
+

@@ -3,3 +3,4 @@ vpn/*
 .msmtprc
 .vdirsyncer/config
 .config/offlineimap/{config,scripts.py}
+.config/mopidy/*

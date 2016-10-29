@@ -77,6 +77,7 @@ export TERM=rxvt-unicode-256color
 
 export SVNROOT=svn+ssh://svn.osl.manamind.com/export/svn
 export JAVA_HOME=/local/java/jdk1.8.0_51
+export FLEX_HOME="/local/flex"
 export ANT_HOME="/usr/share/ant/"
 export COLLECT_HOME="/local/collect/default"
 export COLLECT_DOMAIN="/local/home/c_hb/domain"
@@ -116,6 +117,7 @@ alias gu="git up"
 alias gcd="git checkout develop"
 alias gds="git diff --staged"
 alias gc-="git checkout -"
+alias glg="git log --stat --show-signature"
 
 alias yst="yadm status"
 alias ya="yadm add"

@@ -3,7 +3,7 @@
 #####################
 
 # make sure Vim knows mutt is a mail client when sending email
-set   editor="vim -c 'set syntax=mail ft=mail'"
+set   editor="nvim -c 'set syntax=mail ft=mail'"
 
 set   send_charset="utf-8"       # Ensure we can use non-ascii letters
 set   assumed_charset="iso-8859-1" # Assume Windows if no charset set
@@ -135,6 +135,20 @@ bind index gg first-entry  # cursor to first a la vim
 bind index G  last-entry   # cursor to last a la vim
 # macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 # TODO hotkeys for switching INBOXes
+
+# Something to mark a whole folder as ‘read’
+# Line by line,
+# 1. Tag all Unread or Old messages
+# 2. If any messages are tagged, [macro aborts otherwise]
+# 3. Clear the Unread flag
+# 4. Clear the Old flag
+# 5. Untag all messages
+macro index <esc>m '\
+<tag-pattern>~N|~O<enter>\
+<tag-prefix-cond>\
+<tag-prefix><clear-flag>N\
+<tag-prefix><clear-flag>O\
+<untag-pattern>~T<enter>' "mark all messages read"
 
 #########################
 #  Address book: khard  #
