@@ -27,8 +27,6 @@ end
 
 set -gx MARKPATH $HOME/.config/markpath  # Marks for jump
 
-set -g theme_powerline_fonts no
-
 
 ###########################
 #  Environment variables  #
@@ -77,6 +75,7 @@ abbr -a "s sudo"
 abbr -a "g git"
 abbr -a "gst git status"
 abbr -a "glg git log --stat --show-signature"
+abbr -a "ga git add"
 abbr -a "gd git diff"
 abbr -a "gds git diff --staged"
 abbr -a "gu git up"
@@ -99,7 +98,7 @@ abbr -a "yp yadm push"
 
 # Not all servers support rxvt-unicode-256color,
 # use something safe instead
-alias ssh="TERM=xterm ssh"
+alias ssh="env TERM=xterm ssh"
 
 alias java8='export JAVA_HOME=/local/java/jdk1.8.0_51'
 alias java7='export JAVA_HOME=/local/java/jdk1.7.0_79'
@@ -113,7 +112,7 @@ alias java6='export JAVA_HOME=/local/java/jdk1.6.0_31'
 set -gx GPG_KEY 0E25CFCC
 set -gx GPG_TTY (tty)
 
-set -gx SSH_AUTH_SOCK /run/user/$UID/gnupg/S.gpg-agent.ssh
+set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
 
 # ssh does not auto-launch gpg-agent, we do it manually
 gpgconf --launch gpg-agent
