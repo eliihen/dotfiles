@@ -91,6 +91,10 @@ abbr -a "yds yadm diff --staged"
 abbr -a "yc yadm commit"
 abbr -a "yp yadm push"
 
+abbr -a "java8 set -gx JAVA_HOME /local/java/jdk1.8.0_51"
+abbr -a "java7 set -gx JAVA_HOME /local/java/jdk1.7.0_79"
+abbr -a "java6 set -gx JAVA_HOME /local/java/jdk1.6.0_31"
+
 
 #############
 #  Aliases  #
@@ -99,10 +103,6 @@ abbr -a "yp yadm push"
 # Not all servers support rxvt-unicode-256color,
 # use something safe instead
 alias ssh="env TERM=xterm ssh"
-
-alias java8='export JAVA_HOME=/local/java/jdk1.8.0_51'
-alias java7='export JAVA_HOME=/local/java/jdk1.7.0_79'
-alias java6='export JAVA_HOME=/local/java/jdk1.6.0_31'
 
 
 ###############
