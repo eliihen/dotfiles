@@ -7,26 +7,8 @@ set -g fish_prompt_pwd_dir_length 9 # Set prompt directory name length
 
 fish_vi_key_bindings                # Use vi key bindings
 
-########################
-#  Oh my fish plugins  #
-########################
-
-# It kind of sucks that there is no pj for fish..
-# Recreate pj with jump by using this script
-set PROJECT_PATHS \
-  $HOME/workspace/oms \
-  $HOME/workspace/vps \
-  $HOME/workspace/espen \
-  $HOME/workspace/diverse
-function update_markpath
-  for directory in (find $PROJECT_PATHS -maxdepth 1 -type d)
-      cd $directory
-      mark (basename $directory) $directory
-  end
-end
-
-set -gx MARKPATH $HOME/.config/markpath  # Marks for jump
-
+# pj for fish!
+set -gx PROJECT_PATHS $HOME/workspace/*
 
 ###########################
 #  Environment variables  #
@@ -50,6 +32,12 @@ set -gx LANG en_US.UTF-8
 set -gx BROWSER firefox-nightly
 set -gx TERM rxvt-unicode-256color
 
+set -gx COLLECT_HOME /local/collect/default
+set -gx COLLECT_DOMAIN /local/home/c_hb/domain
+set -gx JAVA_HOME /local/java/jdk1.8.0_51
+set -gx FLEX_HOME /local/flex
+set -gx ANT_HOME /usr/share/ant/
+
 # Work VPN is old
 set -gx NSS_HASH_ALG_SUPPORT +MD5
 set -gx OPENSSL_ENABLE_MD5_VERIFY 1
@@ -68,8 +56,10 @@ set -gx PASSWORD_STORE_DIR $HOME/ownCloud/Documents/passwords/password_store
 ###################
 
 abbr -a "work cd $HOME/workspace/oms"
-abbr -a "j jump"
+abbr -a "j pj"
+abbr -a "jo pj open"
 abbr -a "s sudo"
+abbr -a "pd prevd"
 
 # Git abbreviations
 abbr -a "g git"
