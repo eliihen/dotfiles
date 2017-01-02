@@ -7,19 +7,11 @@ set -g fish_prompt_pwd_dir_length 9 # Set prompt directory name length
 
 fish_vi_key_bindings                # Use vi key bindings
 
-########################
-#  Oh my fish plugins  #
-########################
-
-set -q XDG_DATA_HOME
-  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
-  or set -gx OMF_PATH "$HOME/.local/share/omf"
-
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-set PROJECT_PATHS $HOME/workspace/*
-
+# pj for fish!
+set -gx PROJECT_PATHS $HOME/workspace/*
 
 ###########################
 #  Environment variables  #
@@ -47,6 +39,12 @@ set -gx COLORTERM rxvt-unicode-256color
 set -gx COLLECT_HOME /local/collect/collect-6.12.9
 set -gx COLLECT_DOMAIN /local/home/c_sben/domain
 
+set -gx COLLECT_HOME /local/collect/default
+set -gx COLLECT_DOMAIN /local/home/c_hb/domain
+set -gx JAVA_HOME /local/java/jdk1.8.0_51
+set -gx FLEX_HOME /local/flex
+set -gx ANT_HOME /usr/share/ant/
+
 # Work VPN is old
 set -gx NSS_HASH_ALG_SUPPORT +MD5
 set -gx OPENSSL_ENABLE_MD5_VERIFY 1
@@ -72,6 +70,7 @@ abbr -a work cd $HOME/workspace/oms
 abbr -a j pj
 abbr -a jo pj open
 abbr -a s sudo
+abbr -a pd prevd
 
 # Git abbreviations
 abbr -a g git
