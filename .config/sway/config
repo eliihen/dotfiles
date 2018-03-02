@@ -180,6 +180,9 @@ bar {
 bindsym $mod+shift+x exec $binaries/lock-system.sh
 #bindsym $mod+shift+x exec $binaries/lock.sh $HOME/Pictures/lock.*
 
+# Sway >=0.11 requires this for the new security rules
+include /etc/sway/config.d/*
+
 # Load local config
 include ~/.config/sway/conf.d/*
 include ~/.config/sway/conf.d/`hostname`/*

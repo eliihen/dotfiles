@@ -15,6 +15,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
+Plug 'rhysd/committia.vim'
 
 " Conditional loading
 Plug 'wting/rust.vim',          { 'for':  'rust' }
