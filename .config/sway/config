@@ -1,6 +1,6 @@
 # vim: set syntax=conf:
 
-set $term urxvt
+set $term alacritty
 set $mod Mod4
 set $wallpaper $HOME/Pictures/wallpaper.png
 set $binaries $HOME/bin
@@ -191,8 +191,8 @@ include ~/.config/sway/conf.d/`hostname`/*
 # start dunst server (close notification with mod+n)
 exec dunst
 
-# ownCloud sync
-exec owncloud
+# nextcloud sync
+exec nextcloud
 
 # Lock screen on inactivity
 # exec --no-startup-id xautolock -time 5 -detectsleep -locker "$binaries/lock.sh" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"

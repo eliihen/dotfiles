@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/offlineimap -a %i
-Environment="PASSWORD_STORE_DIR=/home/espen/ownCloud/Documents/passwords/password_store"
+Environment="PASSWORD_STORE_DIR=/home/espen/Nextcloud/Documents/passwords/password_store"
 KillSignal=SIGUSR2
 Restart=always
 
