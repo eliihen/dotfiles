@@ -1,1 +1,0 @@
-COMMAND firefox-developer %s
