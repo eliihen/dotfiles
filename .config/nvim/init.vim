@@ -16,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'rhysd/committia.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Conditional loading
 Plug 'wting/rust.vim',          { 'for':  'rust' }
@@ -60,6 +61,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Make macros render faster (lazy draw)
+set lazyredraw
+
 " Prevents some security exploits
 set modelines=0
 
@@ -73,7 +77,7 @@ set tw=80
 set formatoptions=qrn1
 
 " Highlight area to the right of 80
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn=join(range(81,81),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Show invisible characters like spaces
@@ -130,13 +134,16 @@ let g:fugitive_gitlab_domains = ['http://git.osl.manamind.com']
 
 let g:fzf_layout = { 'window': '-tabnew' }
 
+" Set .md to be markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
 """""""""""""""""""
 "  YouCompleteMe  "
 """""""""""""""""""
 " Disable annoying preview pane at the top
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_rust_src_path = '/usr/local/src/rust/rustc-1.10.0/src'
+let g:ycm_rust_src_path = '/usr/local/src/rustc-nightly-src/src'
 
 
 """""""""""""""
