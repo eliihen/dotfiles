@@ -10,8 +10,6 @@ fish_vi_key_bindings                # Use vi key bindings
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-# pj for fish!
-set -gx PROJECT_PATHS $HOME/workspace/*
 
 ###########################
 #  Environment variables  #
@@ -28,6 +26,7 @@ set -gx PATH \
   $HOME/workspace/oms/util \
   /local/collect/default/product/bin \
   $HOME/.fzf/bin \
+  $HOME/.yarn/bin \
   $HOME/.cargo/bin
 
 set -gx EDITOR nvim
@@ -45,6 +44,9 @@ set -gx JAVA_HOME /local/java/jdk1.8.0_51
 set -gx FLEX_HOME /local/flex
 set -gx ANT_HOME /usr/share/ant/
 
+set -gx COLLECT_HOME /local/collect/default
+set -gx COLLECT_DOMAIN /local/home/c_sben/domain
+
 # Work VPN is old
 set -gx NSS_HASH_ALG_SUPPORT +MD5
 set -gx OPENSSL_ENABLE_MD5_VERIFY 1
@@ -59,7 +61,10 @@ set -gx _JAVA_AWT_WM_NONREPARENTING 1
 # Taskwarrior config file
 set -gx TASKRC $HOME/.config/task/config
 
-set -gx PASSWORD_STORE_DIR $HOME/ownCloud/Documents/passwords/password_store
+set -gx PASSWORD_STORE_DIR $HOME/Nextcloud/Documents/passwords/password_store
+
+# The fish pj plugin
+set -gx PROJECT_PATHS $HOME/workspace/*
 
 
 ###################
