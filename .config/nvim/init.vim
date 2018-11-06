@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdtree',     { 'on':  'NERDTreeToggle' }
 
 " Post-install hooks
 Plug 'junegunn/fzf',           { 'dir': '~/.fzf', 'do': './install' }
-Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --tern-completer --racer-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 install.py --clang-completer --tern-completer --racer-completer --java-completer' }
 
 " Snippets are separated from the engine. Type :UltiSnipsAddFiletypes <language>
 " to add snippets for a given language.
@@ -46,7 +46,8 @@ syntax enable
 
 " Oxeded colourscheme from https://github.com/queyenth/oxeded.vim
 " Install by copying .vim colour file into ~/.vim/colors
-colorscheme oxeded
+"colorscheme oxeded
+colorscheme night-owl
 let base16colorspace=256
 
 " Use spaces instead of tabs
@@ -208,6 +209,7 @@ map <c-n> :NERDTreeToggle<CR>
 " FZF search git files on C-p
 " This ignores stuff like node_modules
 map <c-p> :GitFiles<CR>
+map <c-f> :Find<CR>
 
 " Quote: get rid of that stupid goddamned help key that you will invaribly hit
 " constantly while aiming for escape
@@ -271,3 +273,15 @@ augroup BWCCreateDir
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
+" Ripgrep search with :Find
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

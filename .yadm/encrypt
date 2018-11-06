@@ -4,3 +4,4 @@ vpn/*
 .vdirsyncer/config
 .config/offlineimap/{config,scripts.py}
 .config/mopidy/*
+.config/fish/conf.d/oms.fish

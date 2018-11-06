@@ -62,26 +62,26 @@ font:
   # The normal (roman) font face to use.
   normal:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'Literation Mono Powerline'
+    family: 'DankMono'
     # Style can be specified to pick a specific face.
-    # style: Regular
+    style: Regular
 
   # The bold font face
   bold:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'Literation Mono Powerline'
+    family: 'DankMono'
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'Literation Mono Powerline'
+    family: 'DankMono'
     # Style can be specified to pick a specific face.
-    # style: Italic
+    style: Italic
 
   # Point size of the font
-  size: 10.0
+  size: 12.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -111,30 +111,59 @@ custom_cursor_colors: false
 colors:
   # Default colors
   primary:
-    background: '0x151515'
-    foreground: '0xaaaaaa'
+    background: '0x011627'
+    foreground: '0xd6deeb'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xcc0000'
-    green:   '0x4e9a06'
-    yellow:  '0xc4a000'
-    blue:    '0x3465a4'
-    magenta: '0x75507b'
-    cyan:    '0x06989a'
-    white:   '0xd3d7cf'
+    black:   '0x011627'
+    red:     '0xef5350'
+    green:   '0x22da6e'
+    yellow:  '0xaddb67'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x21c7a8'
+    white:   '0xffffff'
 
   # Bright colors
   bright:
-    black:   '0x555753'
-    red:     '0xef2929'
-    green:   '0x8ae234'
-    yellow:  '0xfce94f'
-    blue:    '0x729fcf'
-    magenta: '0xad7fa8'
-    cyan:    '0x34e2e2'
-    white:   '0xeeeeec'
+    black:   '0x575656'
+    red:     '0xef5350'
+    green:   '0x22da6e'
+    yellow:  '0xffeb95'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x7fdbca'
+    white:   '0xffffff'
+
+# Colors old one
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x151515'
+#    foreground: '0xaaaaaa'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x000000'
+#    red:     '0xcc0000'
+#    green:   '0x4e9a06'
+#    yellow:  '0xc4a000'
+#    blue:    '0x3465a4'
+#    magenta: '0x75507b'
+#    cyan:    '0x06989a'
+#    white:   '0xd3d7cf'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x555753'
+#    red:     '0xef2929'
+#    green:   '0x8ae234'
+#    yellow:  '0xfce94f'
+#    blue:    '0x729fcf'
+#    magenta: '0xad7fa8'
+#    cyan:    '0x34e2e2'
+#    white:   '0xeeeeec'
 
 # Colors (Tomorrow Night Bright)
 #colors:

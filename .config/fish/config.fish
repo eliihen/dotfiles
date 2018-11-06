@@ -16,14 +16,15 @@ source $OMF_PATH/init.fish
 ###########################
 
 set -gx PATH \
+  $HOME/bin \
   /usr/local/bin \
   /usr/bin \
   /bin \
   /usr/local/sbin \
   /usr/sbin \
-  $HOME/bin \
   $HOME/workspace/oms/deploy \
   $HOME/workspace/oms/util \
+  $HOME/.jx/bin \
   /local/collect/default/product/bin \
   $HOME/.fzf/bin \
   $HOME/.yarn/bin \
@@ -32,15 +33,15 @@ set -gx PATH \
 set -gx EDITOR nvim
 set -gx LANG en_US.UTF-8
 set -gx BROWSER firefox-nightly
-set -gx TERM rxvt-unicode-256color
-set -gx COLORTERM rxvt-unicode-256color
+set -gx TERM xterm-256color
+set -gx COLORTERM xterm-256color
 
 set -gx COLLECT_HOME /local/collect/collect-6.12.9
 set -gx COLLECT_DOMAIN /local/home/c_sben/domain
 
 set -gx COLLECT_HOME /local/collect/default
 set -gx COLLECT_DOMAIN /local/home/c_hb/domain
-set -gx JAVA_HOME /local/java/jdk1.8.0_51
+set -gx JAVA_HOME /local/java/jdk1.8.0_172
 set -gx FLEX_HOME /local/flex
 set -gx ANT_HOME /usr/share/ant/
 
@@ -62,6 +63,7 @@ set -gx _JAVA_AWT_WM_NONREPARENTING 1
 set -gx TASKRC $HOME/.config/task/config
 
 set -gx PASSWORD_STORE_DIR $HOME/Nextcloud/Documents/passwords/password_store
+set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 
 # The fish pj plugin
 set -gx PROJECT_PATHS $HOME/workspace/*
@@ -83,6 +85,8 @@ abbr -a gst git status
 abbr -a glg git log --stat --show-signature
 abbr -a ga git add
 abbr -a gd git diff
+abbr -a gc git commit
+abbr -a gp git push
 abbr -a gds git diff --staged
 abbr -a gu git up
 abbr -a gcm git checkout master

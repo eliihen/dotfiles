@@ -11,7 +11,8 @@ set $pa-adjust $HOME/bin/pa-adjust
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
+font pango:DankMono 10
 
 # Minimal windows
 new_window pixel 1
@@ -108,7 +109,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exit
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+a move scratchpad
@@ -168,7 +169,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 bar {
   status_command i3blocks
-  tray_output primary
+  #tray_output primary
   colors {
     background #00000066
     statusline #ffffffdd
@@ -178,24 +179,28 @@ bar {
 
 # lock screen
 bindsym $mod+shift+x exec $binaries/lock-system.sh
-#bindsym $mod+shift+x exec $binaries/lock.sh $HOME/Pictures/lock.*
 
-# Sway >=0.11 requires this for the new security rules
-include /etc/sway/config.d/*
+# Select a region and screenshoot it
+bindsym $mod+shift+s exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
 
 # Load local config
 include ~/.config/sway/conf.d/*
-include ~/.config/sway/conf.d/`hostname`/*
+include ~/.config/sway/conf.d/$(hostname)/*
 
 # exec section - run when sway is started
-# start dunst server (close notification with mod+n)
-exec dunst
+# Start notification server
+exec mako
 
 # nextcloud sync
 exec nextcloud
 
 # Lock screen on inactivity
-# exec --no-startup-id xautolock -time 5 -detectsleep -locker "$binaries/lock.sh" -notify 10 -notifier "notify-send -u critical -t 10000 -- 'LOCKING screen in 30 seconds'"
+exec swayidle \
+    timeout 250 notify-send "About to lock the screen" \
+    timeout 300 $binaries/lock-system.sh \
+    timeout 600 'swaymsg "output * dpms off"' \
+       resume 'swaymsg "output * dpms on"' \
+    before-sleep $binaries/lock-system.sh
 
 # Set norwegian keymap
 exec setxkbmap no
