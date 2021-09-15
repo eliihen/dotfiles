@@ -31,7 +31,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: false
+  decorations: None
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -62,21 +62,24 @@ font:
   # The normal (roman) font face to use.
   normal:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'DankMono'
+    #family: 'DankMono'
+    family: 'monospace'
     # Style can be specified to pick a specific face.
     style: Regular
 
   # The bold font face
   bold:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'DankMono'
+    #family: 'DankMono'
+    family: 'monospace'
     # Style can be specified to pick a specific face.
     # style: Bold
 
   # The italic font face
   italic:
     #family: monospace # should be "Menlo" or something on macOS.
-    family: 'DankMono'
+    #family: 'DankMono'
+    family: 'monospace'
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -86,15 +89,15 @@ font:
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -351,7 +354,7 @@ key_bindings:
   - { key: Insert,   mods: Shift,   action: PasteSelection               }
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: Minus,    mods: Control, action: DecreaseFontSize             }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }

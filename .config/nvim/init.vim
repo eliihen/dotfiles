@@ -17,6 +17,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'rhysd/committia.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'haishanh/night-owl.vim'
+Plug 'tpope/vim-vinegar'
 
 " Conditional loading
 Plug 'wting/rust.vim',          { 'for':  'rust' }
